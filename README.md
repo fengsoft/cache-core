@@ -83,6 +83,26 @@ strategy in the consuming application.
 - your product owns which reads are cached and when they are invalidated
 - useful when you want reuse without building a one-size-fits-all cache abstraction
 
+## Distribution
+
+CacheCore is library-first.
+
+Primary package:
+
+- `@fengsoft/cache-core`
+
+Supporting published packages used by the SDK:
+
+- `@fengsoft/cache-core-contracts`
+- `@fengsoft/cache-core-domain`
+- `@fengsoft/cache-core-metrics`
+
+Repo-local pieces that stay internal for now:
+
+- admin API application
+- Redis adapter package
+- testing helpers
+
 ## Repository map
 
 ```txt

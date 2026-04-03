@@ -2,19 +2,45 @@
   "name": "@fengsoft/cache-core",
   "version": "0.1.0",
   "type": "module",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
   },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/fengsoft/cache-core#readme",
+  "bugs": {
+    "url": "https://github.com/fengsoft/cache-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengsoft/cache-core.git",
+    "directory": "packages/sdk"
+  },
+  "keywords": [
+    "cache",
+    "redis",
+    "saas",
+    "typescript",
+    "backend"
+  ],
   "dependencies": {
-    "@fengsoft/cache-core-contracts": "workspace:*",
-    "@fengsoft/cache-core-domain": "workspace:*",
-    "@fengsoft/cache-core-metrics": "workspace:*"
+    "@fengsoft/cache-core-contracts": "0.1.0",
+    "@fengsoft/cache-core-domain": "0.1.0",
+    "@fengsoft/cache-core-metrics": "0.1.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./dist --target bun"
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun && tsc -p tsconfig.build.json"
   }
 }

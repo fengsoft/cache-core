@@ -1,9 +1,44 @@
 {
   "name": "@fengsoft/cache-core-contracts",
-  "private": true,
+  "version": "0.1.0",
   "type": "module",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/fengsoft/cache-core#readme",
+  "bugs": {
+    "url": "https://github.com/fengsoft/cache-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengsoft/cache-core.git",
+    "directory": "packages/contracts"
+  },
+  "keywords": [
+    "cache",
+    "contracts",
+    "saas",
+    "typescript",
+    "zod"
+  ],
   "dependencies": {
     "zod": "^3.24.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun && tsc -p tsconfig.build.json"
   }
 }
