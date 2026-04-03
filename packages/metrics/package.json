@@ -1,0 +1,6 @@
+{
+  "name": "@fengsoft/cache-core-metrics",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts"
+}

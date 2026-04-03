@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+  title: CacheCore Admin API
+  version: 0.1.0
+servers:
+  - url: http://localhost:3040
+paths:
+  /v1/invalidate:
+    post:
+      summary: Invalidate a key or tag
+      responses:
+        "202":
+          description: Invalidation accepted
+  /v1/warm:
+    post:
+      summary: Trigger cache warmup
+      responses:
+        "202":
+          description: Warmup accepted
+  /v1/metrics:
+    get:
+      summary: Read cache metrics
+      responses:
+        "200":
+          description: Metrics snapshot
+

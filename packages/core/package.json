@@ -1,0 +1,6 @@
+{
+  "name": "@fengsoft/cache-core-domain",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts"
+}

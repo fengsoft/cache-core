@@ -1,0 +1,20 @@
+{
+  "name": "@fengsoft/cache-core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@fengsoft/cache-core-contracts": "workspace:*",
+    "@fengsoft/cache-core-domain": "workspace:*",
+    "@fengsoft/cache-core-metrics": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun"
+  }
+}

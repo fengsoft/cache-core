@@ -1,0 +1,25 @@
+{
+  "name": "cache-core",
+  "private": true,
+  "packageManager": "bun@1.1.38",
+  "workspaces": ["apps/*", "packages/*", "packages/adapters/*"],
+  "scripts": {
+    "dev:admin-api": "cd apps/admin-api && bun run dev",
+    "build": "cd packages/sdk && bun run build && cd ../../apps/admin-api && bun run build",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test tests/unit",
+    "integration": "bun test tests/integration",
+    "publish:dry-run": "cd packages/sdk && bun publish --dry-run",
+    "release:status": "bunx changeset status --verbose",
+    "release:check": "bun run build && bun run publish:dry-run",
+    "check": "bun run lint && bun run typecheck && bun run test && bun run integration && bun run build",
+    "ci": "bun run check"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2",
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.1.17",
+    "typescript": "^5.8.3"
+  }
+}
