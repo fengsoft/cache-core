@@ -1,29 +1,13 @@
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "lib": ["ES2022"],
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "types": ["bun"],
-    "baseUrl": ".",
-    "paths": {
-      "@fengsoft/cache-core": ["packages/sdk/src/index.ts"],
-      "@fengsoft/cache-core-domain": ["packages/core/src/index.ts"],
-      "@fengsoft/cache-core-contracts": ["packages/contracts/src/index.ts"],
-      "@fengsoft/cache-core-metrics": ["packages/metrics/src/index.ts"],
-      "@fengsoft/cache-core-observability": [
-        "packages/observability/src/index.ts"
-      ],
-      "@fengsoft/cache-core-testing": ["packages/testing/src/index.ts"],
-      "@fengsoft/cache-core-adapter-redis": [
-        "packages/adapters/redis/src/index.ts"
-      ]
-    }
-  },
-  "include": ["apps/**/*.ts", "packages/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["apps/docs/**"]
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"noEmit": true
+	},
+	"include": [
+		"apps/**/*.ts",
+		"packages/**/*.ts",
+		"tests/**/*.ts",
+		"scripts/**/*.ts",
+		"examples/**/*.ts"
+	]
 }

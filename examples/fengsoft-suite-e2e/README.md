@@ -31,16 +31,16 @@ For a real end-to-end run, prefer:
 Start the local services first:
 
 ```bash
-bun run dev:api      # queueflow
-bun run dev:api      # eventflow
-bun run dev:api      # webhook-core
-bun run dev:admin-api # cache-core
+pnpm dev:api        # queueflow
+pnpm dev:api        # eventflow
+pnpm dev:api        # webhook-core
+pnpm dev:admin-api  # cache-core
 ```
 
 Then run:
 
 ```bash
-bun run example:suite-e2e
+pnpm example:suite-e2e
 ```
 
 Optional environment variables:

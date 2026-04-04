@@ -17,8 +17,8 @@ project into a magic auto-cache framework.
 ```bash
 cp .env.example .env
 docker compose up -d redis
-bun install
-bun run dev:admin-api
+pnpm install
+pnpm dev:admin-api
 ```
 
 ## Commit convention

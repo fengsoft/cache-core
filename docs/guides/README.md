@@ -4,8 +4,9 @@
 
 1. Copy `.env.example` to `.env`.
 2. Start Redis with `docker compose up -d redis`.
-3. Run the admin API with `bun run dev:admin-api`.
-4. Use `GET /health`, `GET /ready`, `GET /metrics` and `GET /v1/metrics` to validate the setup.
+3. Run `pnpm install`.
+4. Run the admin API with `pnpm dev:admin-api`.
+5. Use `GET /health`, `GET /ready`, `GET /metrics` and `GET /v1/metrics` to validate the setup.
 
 ## Integrate in another backend
 

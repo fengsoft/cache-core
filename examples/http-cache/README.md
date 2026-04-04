@@ -14,7 +14,7 @@ Suggested example scenario:
 Run the in-memory SDK example:
 
 ```bash
-bun run example:http-cache
+pnpm example:http-cache
 ```
 
 Optional environment variables:

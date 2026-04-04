@@ -2,7 +2,7 @@
 
 Before the first public release, confirm:
 
-- `bun run ci` passes locally and in GitHub Actions
+- `pnpm run ci` passes locally and in GitHub Actions
 - `docs/reference/openapi.yaml` is generated from the current Zod contracts
 - npm package manifests still match the intended public surface
 - `examples/http-cache/index.ts` still works from a fresh install

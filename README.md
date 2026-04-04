@@ -43,14 +43,14 @@ Typical use cases:
 ```bash
 cp .env.example .env
 docker compose up -d redis
-bun install
-bun run dev:admin-api
+pnpm install
+pnpm dev:admin-api
 ```
 
 Local services:
 
 - Admin API: `http://localhost:3040`
-- Redis: `localhost:6379`
+- Redis: `localhost:6382`
 
 Operational defaults:
 
@@ -136,9 +136,9 @@ If you want to contribute, start here:
 Useful commands:
 
 ```bash
-bun run ci
-bun run dev:admin-api
-bun run example:http-cache
+pnpm run ci
+pnpm dev:admin-api
+pnpm example:http-cache
 ```
 
 Contribution areas that add value early:
@@ -161,7 +161,8 @@ Contribution areas that add value early:
 
 ## Compatibility
 
-- Bun `1.3.x`
+- Node `24.x`
+- pnpm `10.33.x`
 - Redis `7+` for the official adapter
 - npm package available as `@fengsoft/cache-core`
 

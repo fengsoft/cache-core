@@ -1,102 +1,108 @@
-import { describe, expect, test } from "bun:test";
 import {
-  apiErrorSchema,
-  cacheMetricSnapshotSchema,
-  invalidationEventSchema,
+	apiErrorSchema,
+	cacheMetricSnapshotSchema,
+	invalidationEventSchema,
 } from "@fengsoft/cache-core-contracts";
 import { createInvalidationFixture } from "@fengsoft/cache-core-testing";
+import type { FastifyInstance } from "fastify";
+import { afterEach, describe, expect, test } from "vitest";
 import { createCacheCoreAdminApi } from "../../apps/admin-api/src/index";
 
+const apps: FastifyInstance[] = [];
+
+afterEach(async () => {
+	await Promise.all(apps.splice(0).map((app) => app.close()));
+});
+
 describe("cache-core admin api", () => {
-  test("accepts invalidation and warm requests", async () => {
-    const app = createCacheCoreAdminApi({
-      env: {
-        PORT: "3040",
-        API_KEYS: "secret",
-        NODE_ENV: "test",
-      },
-    });
+	test("accepts invalidation and warm requests", async () => {
+		const app = createCacheCoreAdminApi({
+			env: {
+				PORT: "3040",
+				API_KEYS: "secret",
+				NODE_ENV: "test",
+			},
+		});
+		apps.push(app);
 
-    const invalidate = await app.handle(
-      new Request("http://cache-core.local/v1/invalidate", {
-        method: "POST",
-        headers: {
-          authorization: "Bearer secret",
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(createInvalidationFixture()),
-      }),
-    );
-    const warm = await app.handle(
-      new Request("http://cache-core.local/v1/warm", {
-        method: "POST",
-        headers: {
-          authorization: "Bearer secret",
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          namespace: "analytics:metrics",
-          tenantId: "tenant_test",
-          keys: ["metric:signup"],
-        }),
-      }),
-    );
+		const invalidate = await app.inject({
+			method: "POST",
+			url: "/v1/invalidate",
+			headers: {
+				authorization: "Bearer secret",
+				"content-type": "application/json",
+			},
+			payload: createInvalidationFixture(),
+		});
+		const warm = await app.inject({
+			method: "POST",
+			url: "/v1/warm",
+			headers: {
+				authorization: "Bearer secret",
+				"content-type": "application/json",
+			},
+			payload: {
+				namespace: "analytics:metrics",
+				tenantId: "tenant_test",
+				keys: ["metric:signup"],
+			},
+		});
 
-    expect(invalidate.status).toBe(202);
-    expect(invalidationEventSchema.parse(await invalidate.json()).kind).toBe(
-      "tag",
-    );
-    expect(warm.status).toBe(202);
-  });
+		expect(invalidate.statusCode).toBe(202);
+		expect(invalidationEventSchema.parse(invalidate.json()).kind).toBe("tag");
+		expect(warm.statusCode).toBe(202);
+	});
 
-  test("returns JSON metrics and Prometheus metrics", async () => {
-    const app = createCacheCoreAdminApi({
-      env: {
-        PORT: "3040",
-        NODE_ENV: "development",
-      },
-    });
+	test("returns JSON metrics and Prometheus metrics", async () => {
+		const app = createCacheCoreAdminApi({
+			env: {
+				PORT: "3040",
+				NODE_ENV: "development",
+			},
+		});
+		apps.push(app);
 
-    await app.handle(
-      new Request("http://cache-core.local/v1/invalidate", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(createInvalidationFixture()),
-      }),
-    );
+		await app.inject({
+			method: "POST",
+			url: "/v1/invalidate",
+			headers: {
+				"content-type": "application/json",
+			},
+			payload: createInvalidationFixture(),
+		});
 
-    const jsonMetrics = await app.handle(
-      new Request("http://cache-core.local/v1/metrics"),
-    );
-    const prometheus = await app.handle(
-      new Request("http://cache-core.local/metrics"),
-    );
+		const jsonMetrics = await app.inject({
+			method: "GET",
+			url: "/v1/metrics",
+		});
+		const prometheus = await app.inject({
+			method: "GET",
+			url: "/metrics",
+		});
 
-    expect(
-      cacheMetricSnapshotSchema.parse(await jsonMetrics.json()).invalidations,
-    ).toBe(1);
-    expect(await prometheus.text()).toContain("cache_core_http_request_total");
-  });
+		expect(
+			cacheMetricSnapshotSchema.parse(jsonMetrics.json()).invalidations,
+		).toBe(1);
+		expect(prometheus.body).toContain("cache_core_http_request_total");
+	});
 
-  test("rejects unauthorized requests when api keys are configured", async () => {
-    const app = createCacheCoreAdminApi({
-      env: {
-        PORT: "3040",
-        API_KEYS: "secret",
-        NODE_ENV: "test",
-      },
-    });
+	test("rejects unauthorized requests when api keys are configured", async () => {
+		const app = createCacheCoreAdminApi({
+			env: {
+				PORT: "3040",
+				API_KEYS: "secret",
+				NODE_ENV: "test",
+			},
+		});
+		apps.push(app);
 
-    const response = await app.handle(
-      new Request("http://cache-core.local/v1/invalidate", {
-        method: "POST",
-      }),
-    );
+		const response = await app.inject({
+			method: "POST",
+			url: "/v1/invalidate",
+		});
 
-    expect(apiErrorSchema.parse(await response.json()).error.code).toBe(
-      "unauthorized",
-    );
-  });
+		expect(apiErrorSchema.parse(response.json()).error.code).toBe(
+			"unauthorized",
+		);
+	});
 });

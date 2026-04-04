@@ -1,36 +1,38 @@
 {
-  "name": "cache-core",
-  "private": true,
-  "packageManager": "bun@1.3.11",
-  "workspaces": ["apps/*", "packages/*", "packages/adapters/*"],
-  "scripts": {
-    "dev:admin-api": "cd apps/admin-api && bun run dev",
-    "dev:docs": "bun run --cwd apps/docs dev",
-    "example:http-cache": "bun run examples/http-cache/index.ts",
-    "example:suite-e2e": "bun run examples/fengsoft-suite-e2e/index.ts",
-    "build:packages": "cd packages/contracts && bun run build && cd ../core && bun run build && cd ../metrics && bun run build && cd ../sdk && bun run build",
-    "build": "bun run build:packages && cd apps/admin-api && bun run build",
-    "build:docs": "bun run --cwd apps/docs build",
-    "generate:openapi": "bun run scripts/generate-openapi.ts",
-    "check:openapi": "bun run scripts/generate-openapi.ts --check",
-    "lint": "biome check .",
-    "typecheck": "tsc --noEmit",
-    "typecheck:docs": "bun run --cwd apps/docs typecheck",
-    "test": "bun test tests/unit",
-    "integration": "bun test tests/integration",
-    "publish:dry-run": "cd packages/contracts && bun pm pack --dry-run && cd ../core && bun pm pack --dry-run && cd ../metrics && bun pm pack --dry-run && cd ../sdk && bun pm pack --dry-run",
-    "release:status": "bunx changeset status --verbose",
-    "release:check": "bun run build && bun run publish:dry-run",
-    "release:publish": "cd packages/contracts && npm publish --access public && cd ../core && npm publish --access public && cd ../metrics && npm publish --access public && cd ../sdk && npm publish --access public",
-    "check": "bun run lint && bun run typecheck && bun run test && bun run integration && bun run build && bun run check:openapi",
-    "ci": "bun run check"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2",
-    "@biomejs/biome": "^1.9.4",
-    "@types/bun": "^1.1.17",
-    "typescript": "^5.8.3",
-    "yaml": "^2.6.1",
-    "zod-to-json-schema": "^3.24.6"
-  }
+	"name": "cache-core",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@10.33.0",
+	"engines": {
+		"node": ">=24.0.0 <25"
+	},
+	"scripts": {
+		"dev:admin-api": "pnpm --filter @fengsoft/cache-core-admin-api dev",
+		"example:http-cache": "tsx examples/http-cache/index.ts",
+		"example:suite-e2e": "tsx examples/fengsoft-suite-e2e/index.ts",
+		"build": "turbo run build",
+		"typecheck": "turbo run typecheck",
+		"generate:openapi": "tsx scripts/generate-openapi.ts",
+		"check:openapi": "tsx scripts/generate-openapi.ts --check",
+		"lint": "biome check .",
+		"test": "vitest run --config vitest.config.ts tests/unit",
+		"integration": "vitest run --config vitest.config.ts tests/integration",
+		"publish:dry-run": "rm -rf .pack && mkdir -p .pack && (cd packages/contracts && pnpm pack --pack-destination ../../.pack) && (cd packages/core && pnpm pack --pack-destination ../../.pack) && (cd packages/metrics && pnpm pack --pack-destination ../../.pack) && (cd packages/sdk && pnpm pack --pack-destination ../../.pack)",
+		"release:status": "changeset status --verbose",
+		"release:check": "pnpm build && pnpm publish:dry-run",
+		"release:publish": "cd packages/contracts && npm publish --access public && cd ../core && npm publish --access public && cd ../metrics && npm publish --access public && cd ../sdk && npm publish --access public",
+		"check": "pnpm lint && pnpm typecheck && pnpm test && pnpm integration && pnpm build && pnpm check:openapi",
+		"ci": "pnpm check"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.10",
+		"@changesets/cli": "^2.30.0",
+		"@types/node": "^24.5.2",
+		"tsx": "^4.21.0",
+		"turbo": "^2.9.3",
+		"typescript": "^5.8.4",
+		"vitest": "^4.1.2",
+		"yaml": "^2.8.1",
+		"zod-to-json-schema": "^3.24.6"
+	}
 }

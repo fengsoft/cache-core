@@ -14,16 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
         with:
-          bun-version: 1.3.11
+          node-version: 24
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
       - name: Install
-        run: bun install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Release
         uses: changesets/action@v1
         with:
-          version: bunx changeset version && bun install
-          publish: bun run release:publish
+          version: pnpm changeset version && pnpm install
+          publish: pnpm run release:publish
           commit: "chore: release packages"
           title: "chore: release packages"
         env:
