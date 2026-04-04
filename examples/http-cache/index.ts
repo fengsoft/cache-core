@@ -19,14 +19,35 @@ async function main() {
     }),
     {
       tags: ["plans", "catalog"],
-      ttlSeconds: 60,
+      ttlSeconds: 0,
+      staleWhileRevalidateSeconds: 60,
     },
   );
 
   console.log("Warm read:", first);
 
-  const second = await cache.get(["catalog", "current"]);
+  const second = await cache.getWithMetadata(["catalog", "current"]);
   console.log("Cached read:", second);
+
+  const staleRead = await cache.remember(
+    ["catalog", "current"],
+    async () => ({
+      plans: ["starter", "pro", "enterprise"],
+      generatedAt: new Date().toISOString(),
+      refreshed: true,
+    }),
+    {
+      tags: ["plans", "catalog"],
+      ttlSeconds: 0,
+      staleWhileRevalidateSeconds: 60,
+    },
+  );
+  console.log("Served while refreshing:", staleRead);
+
+  await cache.waitForRefresh(["catalog", "current"]);
+
+  const refreshed = await cache.getWithMetadata(["catalog", "current"]);
+  console.log("Read after background refresh:", refreshed);
 
   const invalidation = await cache.invalidateTag("plans");
   console.log("Invalidation event:", invalidation);

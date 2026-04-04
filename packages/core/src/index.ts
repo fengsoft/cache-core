@@ -14,6 +14,7 @@ export interface CacheEntry<T> {
   tags: string[];
   createdAt: string;
   expiresAt: string;
+  staleUntil?: string;
 }
 
 export interface CacheTagIndex {
@@ -40,6 +41,8 @@ export interface CacheMetricSnapshot {
   remembers: number;
   averageLoadMs: number;
 }
+
+export type CacheEntryState = "fresh" | "stale" | "expired";
 
 export interface CacheStore {
   get(key: string): Promise<string | null>;
@@ -85,6 +88,34 @@ export function shouldRefreshEntry(expiresAt: string) {
   return new Date(expiresAt).getTime() <= Date.now();
 }
 
+export function canServeStaleEntry(
+  entry: Pick<CacheEntry<unknown>, "expiresAt" | "staleUntil">,
+) {
+  if (!entry.staleUntil) {
+    return false;
+  }
+
+  const now = Date.now();
+  return (
+    new Date(entry.expiresAt).getTime() <= now &&
+    new Date(entry.staleUntil).getTime() > now
+  );
+}
+
+export function resolveCacheEntryState(
+  entry: Pick<CacheEntry<unknown>, "expiresAt" | "staleUntil">,
+): CacheEntryState {
+  if (!shouldRefreshEntry(entry.expiresAt)) {
+    return "fresh";
+  }
+
+  if (canServeStaleEntry(entry)) {
+    return "stale";
+  }
+
+  return "expired";
+}
+
 export function createCacheEntry<T>(input: {
   key: string;
   value: T;
@@ -101,6 +132,14 @@ export function createCacheEntry<T>(input: {
     expiresAt: new Date(
       createdAt.getTime() + input.policy.ttlSeconds * 1_000,
     ).toISOString(),
+    staleUntil: input.policy.staleWhileRevalidateSeconds
+      ? new Date(
+          createdAt.getTime() +
+            (input.policy.ttlSeconds +
+              input.policy.staleWhileRevalidateSeconds) *
+              1_000,
+        ).toISOString()
+      : undefined,
   };
 }
 

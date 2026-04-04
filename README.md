@@ -57,6 +57,7 @@ Operational defaults:
 - `/health` and `/ready` stay open for probes
 - `/v1/*` can be protected with `API_KEYS`
 - requests may send `x-request-id`, which is echoed back or generated
+- the SDK supports stale-while-revalidate through `remember()` and `getWithMetadata()`
 
 ## How to adopt CacheCore
 

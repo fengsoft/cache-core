@@ -5,8 +5,9 @@ Suggested example scenario:
 1. a metrics endpoint reads from CacheCore
 2. misses fetch from authoritative storage
 3. entries are stored with tenant-aware keys
-4. a write path invalidates by tag
-5. admin API exposes current cache metrics
+4. stale reads are served once while a background refresh updates the entry
+5. a write path invalidates by tag
+6. admin API exposes current cache metrics
 
 ## Run
 
