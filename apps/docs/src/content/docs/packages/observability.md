@@ -38,3 +38,9 @@ Metrics, logging, and tracing helpers shared across the admin API and operationa
 
 - [`@fengsoft/cache-core-admin-api`](../admin-api/)
 - [`@fengsoft/cache-core-metrics`](../metrics/)
+
+## Scripts
+
+- `build`: `tsc -p tsconfig.json`
+- `typecheck`: `tsc --noEmit -p tsconfig.json`
+- `lint`: `biome check src package.json tsconfig.json`

@@ -7,7 +7,8 @@ CacheCore is library-first. The shortest useful path is to run the example, and 
 
 ## Prerequisites
 
-- Bun `1.3.x`
+- Node `24.x`
+- pnpm `10.33.x`
 - Redis if you want the official adapter path
 
 ## Local bootstrap
@@ -15,8 +16,8 @@ CacheCore is library-first. The shortest useful path is to run the example, and 
 ```bash
 cp .env.example .env
 docker compose up -d redis
-bun install
-bun run dev:admin-api
+pnpm install
+pnpm dev:admin-api
 ```
 
 Local surfaces:
@@ -35,7 +36,7 @@ curl http://127.0.0.1:3040/metrics
 ## First embedded flow
 
 ```bash
-bun run example:http-cache
+pnpm example:http-cache
 ```
 
 The example:

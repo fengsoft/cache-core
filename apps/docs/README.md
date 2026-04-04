@@ -8,7 +8,7 @@ from the repository workspace metadata.
 Useful commands:
 
 ```bash
-bun run --cwd apps/docs dev
-bun run --cwd apps/docs typecheck
-bun run --cwd apps/docs build
+pnpm --dir apps/docs dev
+pnpm --dir apps/docs typecheck
+pnpm --dir apps/docs build
 ```

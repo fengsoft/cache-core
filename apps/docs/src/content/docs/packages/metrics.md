@@ -41,4 +41,6 @@ Metric names and helpers for hit ratio, invalidation, and average load timing.
 
 ## Scripts
 
-- `build`: `bun build ./src/index.ts --outdir ./dist --target bun && tsc -p tsconfig.build.json`
+- `build`: `tsc -p tsconfig.json`
+- `typecheck`: `tsc --noEmit -p tsconfig.json`
+- `lint`: `biome check src package.json tsconfig.json`

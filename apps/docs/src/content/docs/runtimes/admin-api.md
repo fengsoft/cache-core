@@ -27,7 +27,7 @@ Operational sidecar API for invalidation, warm requests, metrics, and cache admi
 
 - Package name: `@fengsoft/cache-core-admin-api`
 - Workspace path: `apps/admin-api`
-- Run command: `bun run dev:admin-api`
+- Run command: `pnpm dev:admin-api`
 - Local surface: `http://127.0.0.1:3040`
 
 ## Internal dependencies
@@ -39,7 +39,8 @@ Operational sidecar API for invalidation, warm requests, metrics, and cache admi
 
 ## External dependencies
 
-- `elysia`
+- `fastify`
+- `zod`
 
 ## Current routes
 
@@ -56,5 +57,7 @@ Operational sidecar API for invalidation, warm requests, metrics, and cache admi
 
 ## Scripts
 
-- `dev`: `bun --watch src/index.ts`
-- `build`: `bun build ./src/index.ts --outdir ./dist --target bun`
+- `dev`: `tsx watch src/index.ts`
+- `build`: `tsc -p tsconfig.json`
+- `typecheck`: `tsc --noEmit -p tsconfig.json`
+- `lint`: `biome check src package.json tsconfig.json`

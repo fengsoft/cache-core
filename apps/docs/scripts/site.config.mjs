@@ -131,7 +131,7 @@ const runtimeDocs = {
       "serve health, readiness, and metrics surfaces",
       "expose admin-friendly cache snapshots",
     ],
-    runCommand: "bun run dev:admin-api",
+    runCommand: "pnpm dev:admin-api",
     localSurface: "http://127.0.0.1:3040",
     routes: [
       "`GET /health`",
@@ -161,10 +161,10 @@ const exampleDocs = {
       "stale-while-revalidate behavior",
       "tag invalidation and metrics inspection",
     ],
-    runCommand: "bun run example:http-cache",
+    runCommand: "pnpm example:http-cache",
     tryThisFirst: {
       language: "bash",
-      code: ["bun run example:http-cache"],
+      code: ["pnpm example:http-cache"],
     },
     expectedOutcome: [
       "the example warms a key, serves a stale read once, refreshes in the background, invalidates by tag, and prints metrics",
@@ -182,10 +182,10 @@ const exampleDocs = {
       "composing cached read models with the rest of the Fengsoft runtime suite",
       "background refresh and admin API warming in a multi-service flow",
     ],
-    runCommand: "bun run example:suite-e2e",
+    runCommand: "pnpm example:suite-e2e",
     tryThisFirst: {
       language: "bash",
-      code: ["bun run example:suite-e2e"],
+      code: ["pnpm example:suite-e2e"],
     },
     expectedOutcome: [
       "the example builds a cached suite read model after QueueFlow, EventFlow, and WebhookCore complete their parts",

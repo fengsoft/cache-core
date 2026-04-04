@@ -37,3 +37,9 @@ Test helpers and fixtures for downstream CacheCore adoption.
 
 - [`@fengsoft/cache-core-core`](../core/)
 - [`@fengsoft/cache-core`](../sdk/)
+
+## Scripts
+
+- `build`: `tsc -p tsconfig.json`
+- `typecheck`: `tsc --noEmit -p tsconfig.json`
+- `lint`: `biome check src package.json tsconfig.json`

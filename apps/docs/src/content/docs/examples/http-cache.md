@@ -24,12 +24,12 @@ Minimal embedded usage showing remember, stale reads, background refresh, invali
 ## Workspace details
 
 - Example path: `examples/http-cache`
-- Run command: `bun run example:http-cache`
+- Run command: `pnpm example:http-cache`
 
 ## Try this first
 
 ```bash
-bun run example:http-cache
+pnpm example:http-cache
 ```
 
 ## Expected outcome

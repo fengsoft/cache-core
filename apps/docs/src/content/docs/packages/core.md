@@ -44,4 +44,6 @@ Key policy, namespacing, invalidation, stale-while-revalidate, and cache lifecyc
 
 ## Scripts
 
-- `build`: `bun build ./src/index.ts --outdir ./dist --target bun && tsc -p tsconfig.build.json`
+- `build`: `tsc -p tsconfig.json`
+- `typecheck`: `tsc --noEmit -p tsconfig.json`
+- `lint`: `biome check src package.json tsconfig.json`

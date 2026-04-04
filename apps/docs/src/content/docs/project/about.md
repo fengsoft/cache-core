@@ -51,14 +51,14 @@ Typical use cases:
 ```bash
 cp .env.example .env
 docker compose up -d redis
-bun install
-bun run dev:admin-api
+pnpm install
+pnpm dev:admin-api
 ```
 
 Local services:
 
 - Admin API: `http://localhost:3040`
-- Redis: `localhost:6379`
+- Redis: `localhost:6382`
 
 Operational defaults:
 
@@ -144,9 +144,10 @@ If you want to contribute, start here:
 Useful commands:
 
 ```bash
-bun run ci
-bun run dev:admin-api
-bun run example:http-cache
+pnpm run ci
+pnpm dev:admin-api
+pnpm example:http-cache
+pnpm test:suite
 ```
 
 Contribution areas that add value early:
@@ -169,7 +170,8 @@ Contribution areas that add value early:
 
 ## Compatibility
 
-- Bun `1.3.x`
+- Node `24.x`
+- pnpm `10.33.x`
 - Redis `7+` for the official adapter
 - npm package available as `@fengsoft/cache-core`
 
@@ -178,6 +180,14 @@ Contribution areas that add value early:
 - `@fengsoft/queueflow` can cache metrics and read models, never job truth
 - `@fengsoft/eventflow` can cache schema lookups and aggregate reads
 - `@fengsoft/webhook-core` can cache endpoint and subscription snapshots
+
+## Suite validation
+
+Use `pnpm test:suite` to run the automated local composition check for:
+
+- `eventflow -> queueflow -> webhook-core -> cache-core`
+- local dependency containers
+- live `ready` probes before the end-to-end flow starts
 
 ## License
 

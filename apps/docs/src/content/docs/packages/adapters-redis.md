@@ -36,3 +36,9 @@ Official Redis adapter for multi-instance, durable cache storage and tag coordin
 
 - [`@fengsoft/cache-core-core`](../core/)
 - [`@fengsoft/cache-core`](../sdk/)
+
+## Scripts
+
+- `build`: `tsc -p tsconfig.json`
+- `typecheck`: `tsc --noEmit -p tsconfig.json`
+- `lint`: `biome check src package.json tsconfig.json`

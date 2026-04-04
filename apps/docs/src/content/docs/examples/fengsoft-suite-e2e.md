@@ -23,12 +23,12 @@ End-to-end example showing CacheCore composing with QueueFlow, EventFlow, and We
 ## Workspace details
 
 - Example path: `examples/fengsoft-suite-e2e`
-- Run command: `bun run example:suite-e2e`
+- Run command: `pnpm example:suite-e2e`
 
 ## Try this first
 
 ```bash
-bun run example:suite-e2e
+pnpm example:suite-e2e
 ```
 
 ## Expected outcome
