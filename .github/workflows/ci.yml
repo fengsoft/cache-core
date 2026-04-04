@@ -2,20 +2,64 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths:
+      - ".github/workflows/ci.yml"
+      - ".env.example"
+      - ".node-version"
+      - ".npmrc"
+      - "biome.json"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "tsconfig.app.json"
+      - "tsconfig.base.json"
+      - "tsconfig.package.json"
+      - "turbo.json"
+      - "vitest.workspace.ts"
+      - "packages/**"
+      - "apps/admin-api/**"
+      - "tests/**"
   pull_request:
+    paths:
+      - ".github/workflows/ci.yml"
+      - ".env.example"
+      - ".node-version"
+      - ".npmrc"
+      - "biome.json"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "tsconfig.app.json"
+      - "tsconfig.base.json"
+      - "tsconfig.package.json"
+      - "turbo.json"
+      - "vitest.workspace.ts"
+      - "packages/**"
+      - "apps/admin-api/**"
+      - "tests/**"
+
+env:
+  CI: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v5
         with:
           version: 10.33.0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
       - name: Install
         run: pnpm install --frozen-lockfile
       - name: Quality checks
