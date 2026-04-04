@@ -157,6 +157,7 @@ Contribution areas that add value early:
 - [Compose with the Fengsoft infra suite](./docs/guides/compose-with-fengsoft-suite.md)
 - [Release checklist](./docs/operations/release-checklist.md)
 - [HTTP cache example](./examples/http-cache/README.md)
+- [Suite e2e example](./examples/fengsoft-suite-e2e/README.md)
 
 ## Compatibility
 
