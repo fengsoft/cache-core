@@ -169,7 +169,7 @@ Contribution areas that add value early:
 
 ## Compatibility
 
-- Bun `1.1.x`
+- Bun `1.3.x`
 - Redis `7+` for the official adapter
 - npm package available as `@fengsoft/cache-core`
 

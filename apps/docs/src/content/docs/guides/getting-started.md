@@ -7,7 +7,7 @@ CacheCore is library-first. The shortest useful path is to run the example, and 
 
 ## Prerequisites
 
-- Bun `1.1.x`
+- Bun `1.3.x`
 - Redis if you want the official adapter path
 
 ## Local bootstrap
