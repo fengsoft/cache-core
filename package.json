@@ -10,6 +10,7 @@
 		"dev:admin-api": "pnpm --filter @fengsoft/cache-core-admin-api dev",
 		"example:http-cache": "tsx examples/http-cache/index.ts",
 		"example:suite-e2e": "tsx examples/fengsoft-suite-e2e/index.ts",
+		"test:suite": "tsx scripts/run-suite-e2e.ts",
 		"build": "turbo run build",
 		"typecheck": "turbo run typecheck",
 		"generate:openapi": "tsx scripts/generate-openapi.ts",

@@ -28,6 +28,14 @@ For a real end-to-end run, prefer:
 
 ## Run
 
+Automated local run:
+
+```bash
+pnpm test:suite
+```
+
+Manual run:
+
 Start the local services first:
 
 ```bash

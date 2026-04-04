@@ -139,6 +139,7 @@ Useful commands:
 pnpm run ci
 pnpm dev:admin-api
 pnpm example:http-cache
+pnpm test:suite
 ```
 
 Contribution areas that add value early:
@@ -171,6 +172,14 @@ Contribution areas that add value early:
 - `@fengsoft/queueflow` can cache metrics and read models, never job truth
 - `@fengsoft/eventflow` can cache schema lookups and aggregate reads
 - `@fengsoft/webhook-core` can cache endpoint and subscription snapshots
+
+## Suite validation
+
+Use `pnpm test:suite` to run the automated local composition check for:
+
+- `eventflow -> queueflow -> webhook-core -> cache-core`
+- local dependency containers
+- live `ready` probes before the end-to-end flow starts
 
 ## License
 

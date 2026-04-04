@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { fileURLToPath } from "node:url";
 import { createCacheCore } from "@fengsoft/cache-core";
 
 interface RequestOptions {
@@ -117,7 +118,7 @@ function startWebhookReceiver(bindHost: string) {
 	});
 }
 
-async function main() {
+export async function runFengsoftSuiteE2E() {
 	const queueflowBaseUrl =
 		process.env.QUEUEFLOW_BASE_URL ?? "http://127.0.0.1:3001";
 	const eventflowBaseUrl =
@@ -369,8 +370,12 @@ async function main() {
 	}
 }
 
-main().catch((error) => {
-	console.error("Fengsoft suite e2e example failed.");
-	console.error(error);
-	process.exitCode = 1;
-});
+const isMainModule = process.argv[1] === fileURLToPath(import.meta.url);
+
+if (isMainModule) {
+	runFengsoftSuiteE2E().catch((error) => {
+		console.error("Fengsoft suite e2e example failed.");
+		console.error(error);
+		process.exitCode = 1;
+	});
+}
