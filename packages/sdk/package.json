@@ -5,9 +5,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -25,13 +23,7 @@
     "url": "git+https://github.com/fengsoft/cache-core.git",
     "directory": "packages/sdk"
   },
-  "keywords": [
-    "cache",
-    "redis",
-    "saas",
-    "typescript",
-    "backend"
-  ],
+  "keywords": ["cache", "redis", "saas", "typescript", "backend"],
   "dependencies": {
     "@fengsoft/cache-core-contracts": "0.1.0",
     "@fengsoft/cache-core-domain": "0.1.0",

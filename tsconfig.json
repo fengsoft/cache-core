@@ -15,6 +15,9 @@
       "@fengsoft/cache-core-domain": ["packages/core/src/index.ts"],
       "@fengsoft/cache-core-contracts": ["packages/contracts/src/index.ts"],
       "@fengsoft/cache-core-metrics": ["packages/metrics/src/index.ts"],
+      "@fengsoft/cache-core-observability": [
+        "packages/observability/src/index.ts"
+      ],
       "@fengsoft/cache-core-testing": ["packages/testing/src/index.ts"],
       "@fengsoft/cache-core-adapter-redis": [
         "packages/adapters/redis/src/index.ts"

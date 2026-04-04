@@ -8,3 +8,14 @@ Suggested example scenario:
 4. a write path invalidates by tag
 5. admin API exposes current cache metrics
 
+## Run
+
+Run the in-memory SDK example:
+
+```bash
+bun run example:http-cache
+```
+
+Optional environment variables:
+
+- `CACHECORE_TENANT_ID`

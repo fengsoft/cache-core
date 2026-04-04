@@ -2,25 +2,251 @@ openapi: 3.1.0
 info:
   title: CacheCore Admin API
   version: 0.1.0
+  description: Operational API for invalidation, warming and cache metrics.
 servers:
   - url: http://localhost:3040
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    HealthResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        service:
+          type: string
+          minLength: 1
+        uptimeSeconds:
+          type: integer
+          minimum: 0
+      required:
+        - ok
+        - service
+        - uptimeSeconds
+      additionalProperties: false
+    ReadinessResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        service:
+          type: string
+          minLength: 1
+        checks:
+          type: object
+          properties:
+            invalidationsBuffered:
+              type: integer
+              minimum: 0
+            warmRequests:
+              type: integer
+              minimum: 0
+          required:
+            - invalidationsBuffered
+            - warmRequests
+          additionalProperties: false
+      required:
+        - ok
+        - service
+        - checks
+      additionalProperties: false
+    InvalidateRequest:
+      type: object
+      properties:
+        namespace:
+          type: string
+          minLength: 1
+        tenantId:
+          type: string
+          minLength: 1
+        key:
+          type: string
+          minLength: 1
+        tag:
+          type: string
+          minLength: 1
+      required:
+        - namespace
+      additionalProperties: false
+    InvalidationEvent:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 1
+        namespace:
+          type: string
+          minLength: 1
+        tenantId:
+          type: string
+          minLength: 1
+        kind:
+          type: string
+          enum:
+            - key
+            - tag
+        target:
+          type: string
+          minLength: 1
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - namespace
+        - kind
+        - target
+        - createdAt
+      additionalProperties: false
+    WarmRequest:
+      type: object
+      properties:
+        namespace:
+          type: string
+          minLength: 1
+        tenantId:
+          type: string
+          minLength: 1
+        keys:
+          type: array
+          items:
+            type: string
+            minLength: 1
+          minItems: 1
+      required:
+        - namespace
+        - keys
+      additionalProperties: false
+    CacheMetricSnapshot:
+      type: object
+      properties:
+        hits:
+          type: integer
+          minimum: 0
+        misses:
+          type: integer
+          minimum: 0
+        sets:
+          type: integer
+          minimum: 0
+        deletes:
+          type: integer
+          minimum: 0
+        invalidations:
+          type: integer
+          minimum: 0
+        remembers:
+          type: integer
+          minimum: 0
+        averageLoadMs:
+          type: number
+          minimum: 0
+      required:
+        - hits
+        - misses
+        - sets
+        - deletes
+        - invalidations
+        - remembers
+        - averageLoadMs
+      additionalProperties: false
+    ApiError:
+      type: object
+      properties:
+        requestId:
+          type: string
+          minLength: 1
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              enum:
+                - invalid_request
+                - unauthorized
+                - not_found
+                - conflict
+                - internal_error
+            message:
+              type: string
+            details: {}
+          required:
+            - code
+            - message
+          additionalProperties: false
+      required:
+        - requestId
+        - error
+      additionalProperties: false
 paths:
+  /health:
+    get:
+      responses:
+        "200":
+          description: Liveness
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+  /ready:
+    get:
+      responses:
+        "200":
+          description: Readiness
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessResponse"
+  /metrics:
+    get:
+      responses:
+        "200":
+          description: Prometheus metrics
+          content:
+            text/plain:
+              schema:
+                type: string
   /v1/invalidate:
     post:
-      summary: Invalidate a key or tag
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvalidateRequest"
       responses:
         "202":
           description: Invalidation accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidationEvent"
   /v1/warm:
     post:
-      summary: Trigger cache warmup
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WarmRequest"
       responses:
         "202":
-          description: Warmup accepted
+          description: Warm request accepted
   /v1/metrics:
     get:
-      summary: Read cache metrics
+      security:
+        - ApiKeyAuth: []
       responses:
         "200":
-          description: Metrics snapshot
-
+          description: Cache metrics snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CacheMetricSnapshot"

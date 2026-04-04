@@ -5,9 +5,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -25,12 +23,7 @@
     "url": "git+https://github.com/fengsoft/cache-core.git",
     "directory": "packages/core"
   },
-  "keywords": [
-    "cache",
-    "domain",
-    "saas",
-    "typescript"
-  ],
+  "keywords": ["cache", "domain", "saas", "typescript"],
   "publishConfig": {
     "access": "public"
   },

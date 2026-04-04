@@ -1,5 +1,9 @@
 # CacheCore
 
+[![CI](https://github.com/fengsoft/cache-core/actions/workflows/ci.yml/badge.svg)](https://github.com/fengsoft/cache-core/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/%40fengsoft%2Fcache-core.svg)](https://www.npmjs.com/package/@fengsoft/cache-core)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
+
 CacheCore is a reusable caching layer for SaaS backends with support for
 namespacing, TTL, tag-based invalidation, metrics, and tenant-aware keys.
 
@@ -133,6 +137,7 @@ Useful commands:
 ```bash
 bun run ci
 bun run dev:admin-api
+bun run example:http-cache
 ```
 
 Contribution areas that add value early:
@@ -147,7 +152,16 @@ Contribution areas that add value early:
 - [Contributing guide](./CONTRIBUTING.md)
 - [Security policy](./SECURITY.md)
 - [Architecture and concepts](./docs/README.md)
+- [API reference](./docs/reference/openapi.yaml)
+- [Compose with the Fengsoft infra suite](./docs/guides/compose-with-fengsoft-suite.md)
+- [Release checklist](./docs/operations/release-checklist.md)
 - [HTTP cache example](./examples/http-cache/README.md)
+
+## Compatibility
+
+- Bun `1.1.x`
+- Redis `7+` for the official adapter
+- npm package available as `@fengsoft/cache-core`
 
 ## Related projects
 

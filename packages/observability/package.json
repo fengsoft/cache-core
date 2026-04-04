@@ -1,0 +1,6 @@
+{
+  "name": "@fengsoft/cache-core-observability",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts"
+}

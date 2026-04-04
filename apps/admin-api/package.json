@@ -10,6 +10,7 @@
     "@fengsoft/cache-core-contracts": "workspace:*",
     "@fengsoft/cache-core-domain": "workspace:*",
     "@fengsoft/cache-core-metrics": "workspace:*",
+    "@fengsoft/cache-core-observability": "workspace:*",
     "elysia": "^1.1.24"
   }
 }
