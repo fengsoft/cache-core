@@ -20,6 +20,7 @@ export default defineConfig({
     starlight({
       title: siteConfig.title,
       description: siteConfig.description,
+      disable404Route: true,
       social: [
         {
           icon: "github",
