@@ -83,8 +83,7 @@ async function main() {
     process.env.WEBHOOK_CORE_BASE_URL ?? "http://127.0.0.1:3030";
   const cacheCoreBaseUrl =
     process.env.CACHE_CORE_BASE_URL ?? "http://127.0.0.1:3040";
-  const webhookReceiverHost =
-    process.env.WEBHOOK_RECEIVER_HOST ?? "127.0.0.1";
+  const webhookReceiverHost = process.env.WEBHOOK_RECEIVER_HOST ?? "127.0.0.1";
   const webhookReceiverBindHost =
     process.env.WEBHOOK_RECEIVER_BIND_HOST ?? "0.0.0.0";
   const runId = Date.now().toString();
@@ -168,7 +167,7 @@ async function main() {
           }>;
         }>(
           queueflowBaseUrl,
-          `/v1/jobs?limit=20&queue=webhooks&jobType=webhook.dispatch`,
+          "/v1/jobs?limit=20&queue=webhooks&jobType=webhook.dispatch",
         );
 
         const matchingJob = jobs.items.find(
@@ -196,8 +195,9 @@ async function main() {
         );
 
         return (
-          deliveries.items.find((delivery) => delivery.status === "delivered") ??
-          null
+          deliveries.items.find(
+            (delivery) => delivery.status === "delivered",
+          ) ?? null
         );
       },
       {
@@ -290,7 +290,9 @@ async function main() {
     }
 
     if (receiverAttempts !== 2) {
-      throw new Error(`Expected two receiver attempts, got ${receiverAttempts}`);
+      throw new Error(
+        `Expected two receiver attempts, got ${receiverAttempts}`,
+      );
     }
 
     if ((eventMetrics.items[0]?.count ?? 0) !== 1) {
@@ -306,7 +308,9 @@ async function main() {
     }
 
     if (refreshedRead.state !== "stale" && refreshedRead.state !== "fresh") {
-      throw new Error(`Unexpected refreshed cache state: ${refreshedRead.state}`);
+      throw new Error(
+        `Unexpected refreshed cache state: ${refreshedRead.state}`,
+      );
     }
 
     if (!refreshedRead.value || refreshedRead.value.refreshed !== true) {

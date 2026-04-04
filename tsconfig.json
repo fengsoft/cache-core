@@ -24,5 +24,6 @@
       ]
     }
   },
-  "include": ["apps/**/*.ts", "packages/**/*.ts", "tests/**/*.ts"]
+  "include": ["apps/**/*.ts", "packages/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["apps/docs/**"]
 }

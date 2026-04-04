@@ -5,6 +5,7 @@
       "node_modules/**",
       "dist/**",
       "apps/**/dist/**",
+      "apps/**/.astro/**",
       "packages/**/dist/**"
     ]
   },

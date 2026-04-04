@@ -3,17 +3,72 @@ name: CI
 on:
   push:
     branches: [main]
+    paths:
+      - ".github/workflows/ci.yml"
+      - ".env.example"
+      - "biome.json"
+      - "bun.lockb"
+      - "package.json"
+      - "tsconfig.json"
+      - "packages/**"
+      - "apps/admin-api/**"
+      - "examples/**"
+      - "tests/**"
+      - "scripts/**"
   pull_request:
+    paths:
+      - ".github/workflows/ci.yml"
+      - ".env.example"
+      - "biome.json"
+      - "bun.lockb"
+      - "package.json"
+      - "tsconfig.json"
+      - "packages/**"
+      - "apps/admin-api/**"
+      - "examples/**"
+      - "tests/**"
+      - "scripts/**"
+
+env:
+  CI: true
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  quality:
+  ci:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.1.38
-      - name: Install
+
+      - name: Install dependencies
         run: bun install --frozen-lockfile
-      - name: Quality checks
-        run: bun run ci
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Unit tests
+        run: bun run test
+
+      - name: Integration tests
+        if: github.event_name == 'push'
+        run: bun run integration
+
+      - name: Build
+        if: github.event_name == 'push'
+        run: bun run build
+
+      - name: Check OpenAPI
+        if: github.event_name == 'push'
+        run: bun run check:openapi
