@@ -33,9 +33,9 @@
 		"backend"
 	],
 	"dependencies": {
-		"@saazip/cache-core-contracts": "npm:@fengsoft/cache-core-contracts@0.1.0",
-		"@saazip/cache-core-domain": "npm:@fengsoft/cache-core-domain@0.1.0",
-		"@saazip/cache-core-metrics": "npm:@fengsoft/cache-core-metrics@0.1.0"
+		"@saazip/cache-core-contracts": "0.1.0",
+		"@saazip/cache-core-domain": "0.1.0",
+		"@saazip/cache-core-metrics": "0.1.0"
 	},
 	"publishConfig": {
 		"access": "public"

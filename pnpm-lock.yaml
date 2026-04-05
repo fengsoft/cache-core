@@ -87,22 +87,22 @@ importers:
   packages/metrics:
     dependencies:
       '@saazip/cache-core-domain':
-        specifier: npm:@fengsoft/cache-core-domain@0.1.0
-        version: '@fengsoft/cache-core-domain@0.1.0'
+        specifier: 0.1.0
+        version: 0.1.0
 
   packages/observability: {}
 
   packages/sdk:
     dependencies:
       '@saazip/cache-core-contracts':
-        specifier: npm:@fengsoft/cache-core-contracts@0.1.0
-        version: '@fengsoft/cache-core-contracts@0.1.0'
+        specifier: 0.1.0
+        version: 0.1.0
       '@saazip/cache-core-domain':
-        specifier: npm:@fengsoft/cache-core-domain@0.1.0
-        version: '@fengsoft/cache-core-domain@0.1.0'
+        specifier: 0.1.0
+        version: 0.1.0
       '@saazip/cache-core-metrics':
-        specifier: npm:@fengsoft/cache-core-metrics@0.1.0
-        version: '@fengsoft/cache-core-metrics@0.1.0'
+        specifier: 0.1.0
+        version: 0.1.0
 
   packages/testing: {}
 
@@ -526,14 +526,8 @@ packages:
   '@fastify/proxy-addr@5.1.0':
     resolution: {integrity: sha512-INS+6gh91cLUjB+PVHfu1UqcB76Sqtpyp7bnL+FYojhjygvOPA9ctiD/JDKsyD9Xgu4hUhCSJBPig/w7duNajw==}
 
-  '@fengsoft/cache-core-contracts@0.1.0':
-    resolution: {integrity: sha512-zJdCVDUUtXdv0E7mVCkoLnoFc+CKSphZbE+o07eMeWhkr1m6vFIoxHPQAUm+GFbuFZVz6D4GarB72HWo1t4kjw==}
-
   '@fengsoft/cache-core-domain@0.1.0':
     resolution: {integrity: sha512-VbSpu289kfPmWvisyUPLL0iqytm9USUWsA2ta8dM5AIZpSUpSJgTdDUZChene/8d+qqOOqZQKvs7b0TlyRUjLw==}
-
-  '@fengsoft/cache-core-metrics@0.1.0':
-    resolution: {integrity: sha512-e9OwivflCszaNE3kBp6Mo4hgP2aQGmVbOGrRpGl28LDK3DlSHe4F2FuDQ+It5VQ7jkTEN2hBe1afg0d/Nx8pgA==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1016,6 +1010,15 @@ packages:
     resolution: {integrity: sha512-lWMnixq/QzxyhTV6NjQJ4SFo1J6PvOX8vUx5Wb4bBPsEb+8xZ89Bz6kOXpfXj9ak9AHTQVQzlgzBEc1SyM27xQ==}
     cpu: [x64]
     os: [win32]
+
+  '@saazip/cache-core-contracts@0.1.0':
+    resolution: {integrity: sha512-9s+o35cVticKGHQz3YQ/5x6A9KJf7GHZgEgmrx+UOjaMPy6iFSEuK8A7zgQuM7P/H0W1pPdvndKbOgWr3CEQSQ==}
+
+  '@saazip/cache-core-domain@0.1.0':
+    resolution: {integrity: sha512-YK+r8JSgWiO4mJlJ0V7TzQtrQwBuXV2IV8vezYCgq20gmP7lex8vbHEzSO9ck19SMmfPXBPUkrCgp5lunhIZqA==}
+
+  '@saazip/cache-core-metrics@0.1.0':
+    resolution: {integrity: sha512-BdCIPNTvpxe5yr00Tsno5wWj4pyZMf3eBKeImFETgYebtwPcCIfkQUE9Gi7f+8JtGB5BM0fBB4aR73TOfIHq8w==}
 
   '@shikijs/core@3.23.0':
     resolution: {integrity: sha512-NSWQz0riNb67xthdm5br6lAkvpDJRTgB36fxlo37ZzM2yq0PQFFzbd8psqC2XMPgCzo1fW6cVi18+ArJ44wqgA==}
@@ -3675,15 +3678,7 @@ snapshots:
       '@fastify/forwarded': 3.0.1
       ipaddr.js: 2.3.0
 
-  '@fengsoft/cache-core-contracts@0.1.0':
-    dependencies:
-      zod: 3.25.76
-
   '@fengsoft/cache-core-domain@0.1.0': {}
-
-  '@fengsoft/cache-core-metrics@0.1.0':
-    dependencies:
-      '@fengsoft/cache-core-domain': 0.1.0
 
   '@img/colour@1.1.0':
     optional: true
@@ -4018,6 +4013,16 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.60.1':
     optional: true
+
+  '@saazip/cache-core-contracts@0.1.0':
+    dependencies:
+      zod: 3.25.76
+
+  '@saazip/cache-core-domain@0.1.0': {}
+
+  '@saazip/cache-core-metrics@0.1.0':
+    dependencies:
+      '@saazip/cache-core-domain': '@fengsoft/cache-core-domain@0.1.0'
 
   '@shikijs/core@3.23.0':
     dependencies:

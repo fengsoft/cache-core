@@ -32,7 +32,7 @@
 		"typescript"
 	],
 	"dependencies": {
-		"@saazip/cache-core-domain": "npm:@fengsoft/cache-core-domain@0.1.0"
+		"@saazip/cache-core-domain": "0.1.0"
 	},
 	"publishConfig": {
 		"access": "public"
