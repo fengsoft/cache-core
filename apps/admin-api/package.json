@@ -14,6 +14,6 @@
 		"@saazip/cache-core-metrics": "workspace:*",
 		"@saazip/cache-core-observability": "workspace:*",
 		"fastify": "^5.8.4",
-		"zod": "^3.23.8"
+		"zod": "^4.3.6"
 	}
 }
