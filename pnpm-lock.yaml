@@ -101,8 +101,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       '@saazip/cache-core-metrics':
-        specifier: 0.1.0
-        version: 0.1.0
+        specifier: 0.1.1
+        version: 0.1.1
 
   packages/testing: {}
 
@@ -525,9 +525,6 @@ packages:
 
   '@fastify/proxy-addr@5.1.0':
     resolution: {integrity: sha512-INS+6gh91cLUjB+PVHfu1UqcB76Sqtpyp7bnL+FYojhjygvOPA9ctiD/JDKsyD9Xgu4hUhCSJBPig/w7duNajw==}
-
-  '@fengsoft/cache-core-domain@0.1.0':
-    resolution: {integrity: sha512-VbSpu289kfPmWvisyUPLL0iqytm9USUWsA2ta8dM5AIZpSUpSJgTdDUZChene/8d+qqOOqZQKvs7b0TlyRUjLw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1017,8 +1014,8 @@ packages:
   '@saazip/cache-core-domain@0.1.0':
     resolution: {integrity: sha512-YK+r8JSgWiO4mJlJ0V7TzQtrQwBuXV2IV8vezYCgq20gmP7lex8vbHEzSO9ck19SMmfPXBPUkrCgp5lunhIZqA==}
 
-  '@saazip/cache-core-metrics@0.1.0':
-    resolution: {integrity: sha512-BdCIPNTvpxe5yr00Tsno5wWj4pyZMf3eBKeImFETgYebtwPcCIfkQUE9Gi7f+8JtGB5BM0fBB4aR73TOfIHq8w==}
+  '@saazip/cache-core-metrics@0.1.1':
+    resolution: {integrity: sha512-3n56djmJ+nAdxjeaJql1ylpEo9Kz/9ZZW/YH/zofQ52R08pD62n/CeTM6UPRyVVo2JprZK8RF2E49Zd6fKwt3g==}
 
   '@shikijs/core@3.23.0':
     resolution: {integrity: sha512-NSWQz0riNb67xthdm5br6lAkvpDJRTgB36fxlo37ZzM2yq0PQFFzbd8psqC2XMPgCzo1fW6cVi18+ArJ44wqgA==}
@@ -3678,8 +3675,6 @@ snapshots:
       '@fastify/forwarded': 3.0.1
       ipaddr.js: 2.3.0
 
-  '@fengsoft/cache-core-domain@0.1.0': {}
-
   '@img/colour@1.1.0':
     optional: true
 
@@ -4020,9 +4015,9 @@ snapshots:
 
   '@saazip/cache-core-domain@0.1.0': {}
 
-  '@saazip/cache-core-metrics@0.1.0':
+  '@saazip/cache-core-metrics@0.1.1':
     dependencies:
-      '@saazip/cache-core-domain': '@fengsoft/cache-core-domain@0.1.0'
+      '@saazip/cache-core-domain': 0.1.0
 
   '@shikijs/core@3.23.0':
     dependencies:

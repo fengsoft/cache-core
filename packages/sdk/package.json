@@ -1,6 +1,6 @@
 {
 	"name": "@saazip/cache-core",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "module",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
@@ -35,7 +35,7 @@
 	"dependencies": {
 		"@saazip/cache-core-contracts": "0.1.0",
 		"@saazip/cache-core-domain": "0.1.0",
-		"@saazip/cache-core-metrics": "0.1.0"
+		"@saazip/cache-core-metrics": "0.1.1"
 	},
 	"publishConfig": {
 		"access": "public"
