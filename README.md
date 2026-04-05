@@ -13,6 +13,12 @@ admin API, not as a thin Redis wrapper.
 This repository is meant to be a real backend caching foundation, with explicit
 policies and operational behavior.
 
+## SaaS control plane
+
+For repo routing, boundary guidance, release checks, and machine-readable
+catalog surfaces across the Fengsoft SaaS repos, use
+[`saasctl`](../saasctl/README.md).
+
 ## Why CacheCore
 
 CacheCore exists for teams that want caching to stay predictable as systems get
