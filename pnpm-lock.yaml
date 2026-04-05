@@ -38,16 +38,16 @@ importers:
 
   apps/admin-api:
     dependencies:
-      '@fengsoft/cache-core-contracts':
+      '@saazip/cache-core-contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
-      '@fengsoft/cache-core-domain':
+      '@saazip/cache-core-domain':
         specifier: workspace:*
         version: link:../../packages/core
-      '@fengsoft/cache-core-metrics':
+      '@saazip/cache-core-metrics':
         specifier: workspace:*
         version: link:../../packages/metrics
-      '@fengsoft/cache-core-observability':
+      '@saazip/cache-core-observability':
         specifier: workspace:*
         version: link:../../packages/observability
       fastify:
@@ -86,7 +86,7 @@ importers:
 
   packages/metrics:
     dependencies:
-      '@fengsoft/cache-core-domain':
+      '@saazip/cache-core-domain':
         specifier: 0.1.0
         version: 0.1.0
 
@@ -94,13 +94,13 @@ importers:
 
   packages/sdk:
     dependencies:
-      '@fengsoft/cache-core-contracts':
+      '@saazip/cache-core-contracts':
         specifier: 0.1.0
         version: 0.1.0
-      '@fengsoft/cache-core-domain':
+      '@saazip/cache-core-domain':
         specifier: 0.1.0
         version: 0.1.0
-      '@fengsoft/cache-core-metrics':
+      '@saazip/cache-core-metrics':
         specifier: 0.1.0
         version: 0.1.0
 
@@ -526,13 +526,13 @@ packages:
   '@fastify/proxy-addr@5.1.0':
     resolution: {integrity: sha512-INS+6gh91cLUjB+PVHfu1UqcB76Sqtpyp7bnL+FYojhjygvOPA9ctiD/JDKsyD9Xgu4hUhCSJBPig/w7duNajw==}
 
-  '@fengsoft/cache-core-contracts@0.1.0':
+  '@saazip/cache-core-contracts@0.1.0':
     resolution: {integrity: sha512-zJdCVDUUtXdv0E7mVCkoLnoFc+CKSphZbE+o07eMeWhkr1m6vFIoxHPQAUm+GFbuFZVz6D4GarB72HWo1t4kjw==}
 
-  '@fengsoft/cache-core-domain@0.1.0':
+  '@saazip/cache-core-domain@0.1.0':
     resolution: {integrity: sha512-VbSpu289kfPmWvisyUPLL0iqytm9USUWsA2ta8dM5AIZpSUpSJgTdDUZChene/8d+qqOOqZQKvs7b0TlyRUjLw==}
 
-  '@fengsoft/cache-core-metrics@0.1.0':
+  '@saazip/cache-core-metrics@0.1.0':
     resolution: {integrity: sha512-e9OwivflCszaNE3kBp6Mo4hgP2aQGmVbOGrRpGl28LDK3DlSHe4F2FuDQ+It5VQ7jkTEN2hBe1afg0d/Nx8pgA==}
 
   '@img/colour@1.1.0':
@@ -3675,15 +3675,15 @@ snapshots:
       '@fastify/forwarded': 3.0.1
       ipaddr.js: 2.3.0
 
-  '@fengsoft/cache-core-contracts@0.1.0':
+  '@saazip/cache-core-contracts@0.1.0':
     dependencies:
       zod: 3.25.76
 
-  '@fengsoft/cache-core-domain@0.1.0': {}
+  '@saazip/cache-core-domain@0.1.0': {}
 
-  '@fengsoft/cache-core-metrics@0.1.0':
+  '@saazip/cache-core-metrics@0.1.0':
     dependencies:
-      '@fengsoft/cache-core-domain': 0.1.0
+      '@saazip/cache-core-domain': 0.1.0
 
   '@img/colour@1.1.0':
     optional: true

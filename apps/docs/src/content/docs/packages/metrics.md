@@ -1,11 +1,11 @@
 ---
-title: "@fengsoft/cache-core-metrics"
+title: "@saazip/cache-core-metrics"
 description: "Metric names and helpers for hit ratio, invalidation, and average load timing."
 sidebar:
   order: 4
 ---
 
-> Sources: [`packages/metrics/package.json`](https://github.com/fengsoft/cache-core/blob/main/packages/metrics/package.json) | [`packages/metrics/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/packages/metrics/src/index.ts)
+> Sources: [`packages/metrics/package.json`](https://github.com/saazip/cache-core/blob/main/packages/metrics/package.json) | [`packages/metrics/src/index.ts`](https://github.com/saazip/cache-core/blob/main/packages/metrics/src/index.ts)
 
 ## Purpose
 
@@ -22,12 +22,12 @@ Metric names and helpers for hit ratio, invalidation, and average load timing.
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core-metrics`
+- Package name: `@saazip/cache-core-metrics`
 - Workspace path: `packages/metrics`
 
 ## Internal dependencies
 
-- [`@fengsoft/cache-core-domain`](../domain/)
+- [`@saazip/cache-core-domain`](../domain/)
 
 ## External dependencies
 
@@ -35,9 +35,9 @@ Metric names and helpers for hit ratio, invalidation, and average load timing.
 
 ## Usually paired with
 
-- [`@fengsoft/cache-core-core`](../core/)
-- [`@fengsoft/cache-core`](../sdk/)
-- [`@fengsoft/cache-core-admin-api`](../admin-api/)
+- [`@saazip/cache-core-core`](../core/)
+- [`@saazip/cache-core`](../sdk/)
+- [`@saazip/cache-core-admin-api`](../admin-api/)
 
 ## Scripts
 

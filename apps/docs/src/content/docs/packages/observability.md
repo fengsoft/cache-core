@@ -1,11 +1,11 @@
 ---
-title: "@fengsoft/cache-core-observability"
+title: "@saazip/cache-core-observability"
 description: "Metrics, logging, and tracing helpers shared across the admin API and operational flows."
 sidebar:
   order: 5
 ---
 
-> Sources: [`packages/observability/package.json`](https://github.com/fengsoft/cache-core/blob/main/packages/observability/package.json) | [`packages/observability/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/packages/observability/src/index.ts)
+> Sources: [`packages/observability/package.json`](https://github.com/saazip/cache-core/blob/main/packages/observability/package.json) | [`packages/observability/src/index.ts`](https://github.com/saazip/cache-core/blob/main/packages/observability/src/index.ts)
 
 ## Purpose
 
@@ -23,7 +23,7 @@ Metrics, logging, and tracing helpers shared across the admin API and operationa
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core-observability`
+- Package name: `@saazip/cache-core-observability`
 - Workspace path: `packages/observability`
 
 ## Internal dependencies
@@ -36,8 +36,8 @@ Metrics, logging, and tracing helpers shared across the admin API and operationa
 
 ## Usually paired with
 
-- [`@fengsoft/cache-core-admin-api`](../admin-api/)
-- [`@fengsoft/cache-core-metrics`](../metrics/)
+- [`@saazip/cache-core-admin-api`](../admin-api/)
+- [`@saazip/cache-core-metrics`](../metrics/)
 
 ## Scripts
 

@@ -1,5 +1,5 @@
 {
-	"name": "@fengsoft/cache-core-metrics",
+	"name": "@saazip/cache-core-metrics",
 	"version": "0.1.0",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -16,13 +16,13 @@
 		}
 	},
 	"license": "Apache-2.0",
-	"homepage": "https://github.com/fengsoft/cache-core#readme",
+	"homepage": "https://github.com/saazip/cache-core#readme",
 	"bugs": {
-		"url": "https://github.com/fengsoft/cache-core/issues"
+		"url": "https://github.com/saazip/cache-core/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fengsoft/cache-core.git",
+		"url": "git+https://github.com/saazip/cache-core.git",
 		"directory": "packages/metrics"
 	},
 	"keywords": [
@@ -32,7 +32,7 @@
 		"typescript"
 	],
 	"dependencies": {
-		"@fengsoft/cache-core-domain": "0.1.0"
+		"@saazip/cache-core-domain": "npm:@fengsoft/cache-core-domain@0.1.0"
 	},
 	"publishConfig": {
 		"access": "public"

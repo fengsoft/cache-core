@@ -1,11 +1,11 @@
 ---
-title: "@fengsoft/cache-core-admin-api"
+title: "@saazip/cache-core-admin-api"
 description: "Operational sidecar API for invalidation, warm requests, metrics, and cache admin workflows."
 sidebar:
   order: 1
 ---
 
-> Sources: [`apps/admin-api/package.json`](https://github.com/fengsoft/cache-core/blob/main/apps/admin-api/package.json) | [`apps/admin-api/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/apps/admin-api/src/index.ts)
+> Sources: [`apps/admin-api/package.json`](https://github.com/saazip/cache-core/blob/main/apps/admin-api/package.json) | [`apps/admin-api/src/index.ts`](https://github.com/saazip/cache-core/blob/main/apps/admin-api/src/index.ts)
 
 ## Purpose
 
@@ -25,17 +25,17 @@ Operational sidecar API for invalidation, warm requests, metrics, and cache admi
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core-admin-api`
+- Package name: `@saazip/cache-core-admin-api`
 - Workspace path: `apps/admin-api`
 - Run command: `pnpm dev:admin-api`
 - Local surface: `http://127.0.0.1:3040`
 
 ## Internal dependencies
 
-- [`@fengsoft/cache-core-contracts`](../../packages/contracts/)
-- [`@fengsoft/cache-core-domain`](../../packages/domain/)
-- [`@fengsoft/cache-core-metrics`](../../packages/metrics/)
-- [`@fengsoft/cache-core-observability`](../../packages/observability/)
+- [`@saazip/cache-core-contracts`](../../packages/contracts/)
+- [`@saazip/cache-core-domain`](../../packages/domain/)
+- [`@saazip/cache-core-metrics`](../../packages/metrics/)
+- [`@saazip/cache-core-observability`](../../packages/observability/)
 
 ## External dependencies
 

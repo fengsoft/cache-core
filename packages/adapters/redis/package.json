@@ -1,5 +1,5 @@
 {
-	"name": "@fengsoft/cache-core-adapter-redis",
+	"name": "@saazip/cache-core-adapter-redis",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",

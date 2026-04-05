@@ -7,9 +7,9 @@
 		"node": ">=24.0.0 <25"
 	},
 	"scripts": {
-		"dev:admin-api": "pnpm --filter @fengsoft/cache-core-admin-api dev",
+		"dev:admin-api": "pnpm --filter @saazip/cache-core-admin-api dev",
 		"example:http-cache": "tsx examples/http-cache/index.ts",
-		"example:suite-e2e": "tsx examples/fengsoft-suite-e2e/index.ts",
+		"example:suite-e2e": "tsx examples/saazip-suite-e2e/index.ts",
 		"test:suite": "tsx scripts/run-suite-e2e.ts",
 		"build": "turbo run build",
 		"typecheck": "turbo run typecheck",

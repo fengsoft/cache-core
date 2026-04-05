@@ -1,5 +1,5 @@
 {
-	"name": "@fengsoft/cache-core-admin-api",
+	"name": "@saazip/cache-core-admin-api",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -9,10 +9,10 @@
 		"lint": "biome check src package.json tsconfig.json"
 	},
 	"dependencies": {
-		"@fengsoft/cache-core-contracts": "workspace:*",
-		"@fengsoft/cache-core-domain": "workspace:*",
-		"@fengsoft/cache-core-metrics": "workspace:*",
-		"@fengsoft/cache-core-observability": "workspace:*",
+		"@saazip/cache-core-contracts": "workspace:*",
+		"@saazip/cache-core-domain": "workspace:*",
+		"@saazip/cache-core-metrics": "workspace:*",
+		"@saazip/cache-core-observability": "workspace:*",
 		"fastify": "^5.8.4",
 		"zod": "^3.23.8"
 	}

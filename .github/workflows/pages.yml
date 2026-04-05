@@ -56,7 +56,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build docs
-        run: pnpm --filter @fengsoft/docs build
+        run: pnpm --filter @saazip/docs build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

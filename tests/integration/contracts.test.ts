@@ -2,8 +2,8 @@ import {
 	apiErrorSchema,
 	cacheMetricSnapshotSchema,
 	invalidationEventSchema,
-} from "@fengsoft/cache-core-contracts";
-import { createInvalidationFixture } from "@fengsoft/cache-core-testing";
+} from "@saazip/cache-core-contracts";
+import { createInvalidationFixture } from "@saazip/cache-core-testing";
 import type { FastifyInstance } from "fastify";
 import { afterEach, describe, expect, test } from "vitest";
 import { createCacheCoreAdminApi } from "../../apps/admin-api/src/index";

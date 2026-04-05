@@ -8,4 +8,4 @@ sidebar:
 
 The admin API is optional. The default adoption path is still embedded library usage.
 
-- [`@fengsoft/cache-core-admin-api`](./admin-api/): Operational sidecar API for invalidation, warm requests, metrics, and cache admin workflows.
+- [`@saazip/cache-core-admin-api`](./admin-api/): Operational sidecar API for invalidation, warm requests, metrics, and cache admin workflows.

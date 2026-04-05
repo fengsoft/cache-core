@@ -10,7 +10,7 @@ import {
 	invalidationEventSchema,
 	readinessResponseSchema,
 	warmRequestSchema,
-} from "@fengsoft/cache-core-contracts";
+} from "@saazip/cache-core-contracts";
 import YAML from "yaml";
 import { zodToJsonSchema } from "zod-to-json-schema";
 

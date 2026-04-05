@@ -1,11 +1,11 @@
 ---
-title: "@fengsoft/cache-core-testing"
+title: "@saazip/cache-core-testing"
 description: "Test helpers and fixtures for downstream CacheCore adoption."
 sidebar:
   order: 7
 ---
 
-> Sources: [`packages/testing/package.json`](https://github.com/fengsoft/cache-core/blob/main/packages/testing/package.json) | [`packages/testing/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/packages/testing/src/index.ts)
+> Sources: [`packages/testing/package.json`](https://github.com/saazip/cache-core/blob/main/packages/testing/package.json) | [`packages/testing/src/index.ts`](https://github.com/saazip/cache-core/blob/main/packages/testing/src/index.ts)
 
 ## Purpose
 
@@ -22,7 +22,7 @@ Test helpers and fixtures for downstream CacheCore adoption.
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core-testing`
+- Package name: `@saazip/cache-core-testing`
 - Workspace path: `packages/testing`
 
 ## Internal dependencies
@@ -35,8 +35,8 @@ Test helpers and fixtures for downstream CacheCore adoption.
 
 ## Usually paired with
 
-- [`@fengsoft/cache-core-core`](../core/)
-- [`@fengsoft/cache-core`](../sdk/)
+- [`@saazip/cache-core-core`](../core/)
+- [`@saazip/cache-core`](../sdk/)
 
 ## Scripts
 

@@ -1,6 +1,6 @@
-# Fengsoft suite e2e example
+# Saazip suite e2e example
 
-This example composes the four Fengsoft infra projects in one automatic flow:
+This example composes the four Saazip infra projects in one automatic flow:
 
 1. `EventFlow` registers a schema and ingests an event
 2. `EventFlow` auto-enqueues a `webhook.dispatch` job in `QueueFlow`

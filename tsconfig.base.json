@@ -16,15 +16,15 @@
 		"verbatimModuleSyntax": true,
 		"types": ["node"],
 		"paths": {
-			"@fengsoft/cache-core": ["./packages/sdk/src/index.ts"],
-			"@fengsoft/cache-core-domain": ["./packages/core/src/index.ts"],
-			"@fengsoft/cache-core-contracts": ["./packages/contracts/src/index.ts"],
-			"@fengsoft/cache-core-metrics": ["./packages/metrics/src/index.ts"],
-			"@fengsoft/cache-core-observability": [
+			"@saazip/cache-core": ["./packages/sdk/src/index.ts"],
+			"@saazip/cache-core-domain": ["./packages/core/src/index.ts"],
+			"@saazip/cache-core-contracts": ["./packages/contracts/src/index.ts"],
+			"@saazip/cache-core-metrics": ["./packages/metrics/src/index.ts"],
+			"@saazip/cache-core-observability": [
 				"./packages/observability/src/index.ts"
 			],
-			"@fengsoft/cache-core-testing": ["./packages/testing/src/index.ts"],
-			"@fengsoft/cache-core-adapter-redis": [
+			"@saazip/cache-core-testing": ["./packages/testing/src/index.ts"],
+			"@saazip/cache-core-adapter-redis": [
 				"./packages/adapters/redis/src/index.ts"
 			]
 		}

@@ -8,7 +8,7 @@ Until `1.0.0`, only the latest minor release is considered supported.
 
 Do not disclose vulnerabilities publicly before a fix is available.
 
-Send reports to `security@fengsoft.dev` with:
+Send reports to `security@saazip.dev` with:
 
 - affected version
 - impact summary

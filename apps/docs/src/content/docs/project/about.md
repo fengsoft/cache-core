@@ -6,10 +6,10 @@ sidebar:
   order: 1
 ---
 
-> Source: [`README.md`](https://github.com/fengsoft/cache-core/blob/main/README.md)
+> Source: [`README.md`](https://github.com/saazip/cache-core/blob/main/README.md)
 
-[![CI](https://github.com/fengsoft/cache-core/actions/workflows/ci.yml/badge.svg)](https://github.com/fengsoft/cache-core/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/%40fengsoft%2Fcache-core.svg)](https://www.npmjs.com/package/@fengsoft/cache-core)
+[![CI](https://github.com/saazip/cache-core/actions/workflows/ci.yml/badge.svg)](https://github.com/saazip/cache-core/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/%40saazip%2Fcache-core.svg)](https://www.npmjs.com/package/@saazip/cache-core)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
 CacheCore is a reusable caching layer for SaaS backends with support for
@@ -20,6 +20,12 @@ admin API, not as a thin Redis wrapper.
 
 This repository is meant to be a real backend caching foundation, with explicit
 policies and operational behavior.
+
+## SaaS control plane
+
+For repo routing, boundary guidance, release checks, and machine-readable
+catalog surfaces across the Saazip SaaS repos, use
+[`saasctl`](../saasctl/README.md).
 
 ## Why CacheCore
 
@@ -75,7 +81,7 @@ You can reuse CacheCore in three ways:
 
 This is the default adoption path for CacheCore.
 
-- your product uses `@fengsoft/cache-core` directly
+- your product uses `@saazip/cache-core` directly
 - CacheCore provides namespacing, invalidation rules, and metrics primitives
 - useful when caching should stay close to application reads and writes
 
@@ -102,13 +108,13 @@ CacheCore is library-first.
 
 Primary package:
 
-- `@fengsoft/cache-core`
+- `@saazip/cache-core`
 
 Supporting published packages used by the SDK:
 
-- `@fengsoft/cache-core-contracts`
-- `@fengsoft/cache-core-domain`
-- `@fengsoft/cache-core-metrics`
+- `@saazip/cache-core-contracts`
+- `@saazip/cache-core-domain`
+- `@saazip/cache-core-metrics`
 
 Repo-local pieces that stay internal for now:
 
@@ -125,7 +131,7 @@ packages/
   core/               Key policy, namespacing, and invalidation model
   contracts/          Public HTTP contracts
   metrics/            Metric names and helpers
-  sdk/                Public package published as @fengsoft/cache-core
+  sdk/                Public package published as @saazip/cache-core
   adapters/redis/     Official Redis adapter
   testing/            Fixtures for downstream adopters
 docs/                 Architecture, concepts, operations, ADRs
@@ -163,23 +169,23 @@ Contribution areas that add value early:
 - [Security policy](./SECURITY.md)
 - [Architecture and concepts](../docs-map/)
 - [API reference](./docs/reference/openapi.yaml)
-- [Compose with the Fengsoft infra suite](./docs/guides/compose-with-fengsoft-suite.md)
+- [Compose with the Saazip infra suite](./docs/guides/compose-with-saazip-suite.md)
 - [Release checklist](./docs/operations/release-checklist.md)
 - [HTTP cache example](./examples/http-cache/README.md)
-- [Suite e2e example](./examples/fengsoft-suite-e2e/README.md)
+- [Suite e2e example](./examples/saazip-suite-e2e/README.md)
 
 ## Compatibility
 
 - Node `24.x`
 - pnpm `10.33.x`
 - Redis `7+` for the official adapter
-- npm package available as `@fengsoft/cache-core`
+- npm package available as `@saazip/cache-core`
 
 ## Related projects
 
-- `@fengsoft/queueflow` can cache metrics and read models, never job truth
-- `@fengsoft/eventflow` can cache schema lookups and aggregate reads
-- `@fengsoft/webhook-core` can cache endpoint and subscription snapshots
+- `@saazip/queueflow` can cache metrics and read models, never job truth
+- `@saazip/eventflow` can cache schema lookups and aggregate reads
+- `@saazip/webhook-core` can cache endpoint and subscription snapshots
 
 ## Suite validation
 

@@ -1,11 +1,11 @@
 ---
-title: "@fengsoft/cache-core-domain"
+title: "@saazip/cache-core-domain"
 description: "Key policy, namespacing, invalidation, stale-while-revalidate, and cache lifecycle primitives."
 sidebar:
   order: 3
 ---
 
-> Sources: [`packages/core/package.json`](https://github.com/fengsoft/cache-core/blob/main/packages/core/package.json) | [`packages/core/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/packages/core/src/index.ts)
+> Sources: [`packages/core/package.json`](https://github.com/saazip/cache-core/blob/main/packages/core/package.json) | [`packages/core/src/index.ts`](https://github.com/saazip/cache-core/blob/main/packages/core/src/index.ts)
 
 ## Purpose
 
@@ -24,7 +24,7 @@ Key policy, namespacing, invalidation, stale-while-revalidate, and cache lifecyc
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core-domain`
+- Package name: `@saazip/cache-core-domain`
 - Workspace path: `packages/core`
 
 ## Internal dependencies
@@ -37,10 +37,10 @@ Key policy, namespacing, invalidation, stale-while-revalidate, and cache lifecyc
 
 ## Usually paired with
 
-- [`@fengsoft/cache-core-contracts`](../contracts/)
-- [`@fengsoft/cache-core-metrics`](../metrics/)
-- [`@fengsoft/cache-core-adapters-redis`](../adapters-redis/)
-- [`@fengsoft/cache-core`](../sdk/)
+- [`@saazip/cache-core-contracts`](../contracts/)
+- [`@saazip/cache-core-metrics`](../metrics/)
+- [`@saazip/cache-core-adapters-redis`](../adapters-redis/)
+- [`@saazip/cache-core`](../sdk/)
 
 ## Scripts
 

@@ -37,4 +37,4 @@
 - Use CacheCore in front of QueueFlow dashboards and EventFlow read APIs.
 - Cache endpoint registries for WebhookCore, but keep delivery state authoritative elsewhere.
 - Treat CacheCore as an optimization layer, never as the primary source of truth.
-- See [`compose-with-fengsoft-suite.md`](./compose-with-fengsoft-suite.md) for a concrete shared-flow example.
+- See [`compose-with-saazip-suite.md`](./compose-with-saazip-suite.md) for a concrete shared-flow example.

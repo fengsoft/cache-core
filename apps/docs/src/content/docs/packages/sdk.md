@@ -1,15 +1,15 @@
 ---
-title: "@fengsoft/cache-core"
-description: "The public package published as `@fengsoft/cache-core` for embedded library-first adoption."
+title: "@saazip/cache-core"
+description: "The public package published as `@saazip/cache-core` for embedded library-first adoption."
 sidebar:
   order: 6
 ---
 
-> Sources: [`packages/sdk/package.json`](https://github.com/fengsoft/cache-core/blob/main/packages/sdk/package.json) | [`packages/sdk/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/packages/sdk/src/index.ts)
+> Sources: [`packages/sdk/package.json`](https://github.com/saazip/cache-core/blob/main/packages/sdk/package.json) | [`packages/sdk/src/index.ts`](https://github.com/saazip/cache-core/blob/main/packages/sdk/src/index.ts)
 
 ## Purpose
 
-The public package published as `@fengsoft/cache-core` for embedded library-first adoption.
+The public package published as `@saazip/cache-core` for embedded library-first adoption.
 
 ## What it gives you
 
@@ -25,7 +25,7 @@ The public package published as `@fengsoft/cache-core` for embedded library-firs
 ## Smallest useful setup
 
 ```ts
-import { createCacheCore } from "@fengsoft/cache-core";
+import { createCacheCore } from "@saazip/cache-core";
 
 const cache = createCacheCore({
   namespace: { service: 'billing-api', domain: 'plans' },
@@ -41,14 +41,14 @@ const value = await cache.remember(
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core`
+- Package name: `@saazip/cache-core`
 - Workspace path: `packages/sdk`
 
 ## Internal dependencies
 
-- [`@fengsoft/cache-core-contracts`](../contracts/)
-- [`@fengsoft/cache-core-domain`](../domain/)
-- [`@fengsoft/cache-core-metrics`](../metrics/)
+- [`@saazip/cache-core-contracts`](../contracts/)
+- [`@saazip/cache-core-domain`](../domain/)
+- [`@saazip/cache-core-metrics`](../metrics/)
 
 ## External dependencies
 
@@ -56,10 +56,10 @@ const value = await cache.remember(
 
 ## Usually paired with
 
-- [`@fengsoft/cache-core-contracts`](../contracts/)
-- [`@fengsoft/cache-core-core`](../core/)
-- [`@fengsoft/cache-core-metrics`](../metrics/)
-- [`@fengsoft/cache-core-adapters-redis`](../adapters-redis/)
+- [`@saazip/cache-core-contracts`](../contracts/)
+- [`@saazip/cache-core-core`](../core/)
+- [`@saazip/cache-core-metrics`](../metrics/)
+- [`@saazip/cache-core-adapters-redis`](../adapters-redis/)
 
 ## You still own
 

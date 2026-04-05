@@ -1,4 +1,4 @@
-# Compose with the Fengsoft infra suite
+# Compose with the Saazip infra suite
 
 CacheCore is the shared optimization layer in the suite.
 

@@ -13,6 +13,6 @@ Start with:
 
 - [`concepts/README.md`](./concepts/README.md)
 - [`architecture/README.md`](./architecture/README.md)
-- [`guides/compose-with-fengsoft-suite.md`](./guides/compose-with-fengsoft-suite.md)
+- [`guides/compose-with-saazip-suite.md`](./guides/compose-with-saazip-suite.md)
 - [`operations/release-checklist.md`](./operations/release-checklist.md)
 - [`reference/openapi.yaml`](./reference/openapi.yaml)

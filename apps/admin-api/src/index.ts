@@ -8,12 +8,12 @@ import {
 	invalidateRequestSchema,
 	readinessResponseSchema,
 	warmRequestSchema,
-} from "@fengsoft/cache-core-contracts";
-import { createInvalidationEvent } from "@fengsoft/cache-core-domain";
+} from "@saazip/cache-core-contracts";
+import { createInvalidationEvent } from "@saazip/cache-core-domain";
 import {
 	createCacheMetricSnapshot,
 	createCacheMetricsRecorder,
-} from "@fengsoft/cache-core-metrics";
+} from "@saazip/cache-core-metrics";
 import {
 	cacheCoreMetricNames,
 	createJsonLogger,
@@ -21,7 +21,7 @@ import {
 	PrometheusRegistry,
 	resolveBooleanEnv,
 	resolveStatusCode,
-} from "@fengsoft/cache-core-observability";
+} from "@saazip/cache-core-observability";
 import Fastify, { type FastifyReply, type FastifyRequest } from "fastify";
 import { z } from "zod";
 

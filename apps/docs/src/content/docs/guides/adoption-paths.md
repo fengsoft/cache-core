@@ -12,7 +12,7 @@ Choose this when:
 
 You will mostly use:
 
-- `@fengsoft/cache-core`
+- `@saazip/cache-core`
 - `packages/core`
 - `packages/metrics`
 
@@ -31,7 +31,7 @@ You will mostly use:
 - `packages/contracts`
 - `packages/observability`
 
-## Path 3: compose it with the Fengsoft suite
+## Path 3: compose it with the Saazip suite
 
 Typical shape:
 

@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
-import { runFengsoftSuiteE2E } from "../examples/fengsoft-suite-e2e/index.ts";
+import { runSaazipSuiteE2E } from "../examples/saazip-suite-e2e/index.ts";
 
 interface RepoDefinition {
 	name: string;
@@ -29,25 +29,25 @@ const repos: RepoDefinition[] = [
 	{
 		name: "queueflow",
 		dir: resolve(openSourceDir, "queueflow"),
-		projectName: "fengsoft-suite-queueflow",
+		projectName: "saazip-suite-queueflow",
 		dependencies: ["postgres", "redis"],
 	},
 	{
 		name: "eventflow",
 		dir: resolve(openSourceDir, "eventflow"),
-		projectName: "fengsoft-suite-eventflow",
+		projectName: "saazip-suite-eventflow",
 		dependencies: ["postgres", "redis"],
 	},
 	{
 		name: "webhook-core",
 		dir: resolve(openSourceDir, "webhook-core"),
-		projectName: "fengsoft-suite-webhook-core",
+		projectName: "saazip-suite-webhook-core",
 		dependencies: ["postgres", "redis"],
 	},
 	{
 		name: "cache-core",
 		dir: cacheCoreDir,
-		projectName: "fengsoft-suite-cache-core",
+		projectName: "saazip-suite-cache-core",
 		dependencies: ["redis"],
 	},
 ];
@@ -336,8 +336,8 @@ async function main() {
 			runningProcesses.map((entry) => entry.child),
 		);
 
-		await runFengsoftSuiteE2E();
-		console.log("[suite] fengsoft suite e2e passed");
+		await runSaazipSuiteE2E();
+		console.log("[suite] saazip suite e2e passed");
 	} finally {
 		for (const entry of [...runningProcesses].reverse()) {
 			await stopProcess(entry.child, entry.label);
@@ -367,7 +367,7 @@ async function main() {
 }
 
 main().catch((error) => {
-	console.error("[suite] fengsoft suite e2e failed");
+	console.error("[suite] saazip suite e2e failed");
 	console.error(error);
 	process.exitCode = 1;
 });

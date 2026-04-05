@@ -1,4 +1,4 @@
-import type { InvalidateRequest } from "@fengsoft/cache-core-contracts";
+import type { InvalidateRequest } from "@saazip/cache-core-contracts";
 
 export function createInvalidationFixture(
 	overrides: Partial<InvalidateRequest> = {},

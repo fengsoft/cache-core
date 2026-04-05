@@ -3,7 +3,7 @@
 	"changelog": [
 		"@changesets/cli/changelog",
 		{
-			"repo": "fengsoft/cache-core"
+			"repo": "saazip/cache-core"
 		}
 	],
 	"commit": false,

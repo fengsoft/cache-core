@@ -2,10 +2,10 @@
 title: "HTTP cache example"
 description: "Minimal embedded usage showing remember, stale reads, background refresh, invalidation, and metrics."
 sidebar:
-  order: 2
+  order: 1
 ---
 
-> Sources: [`examples/http-cache/README.md`](https://github.com/fengsoft/cache-core/blob/main/examples/http-cache/README.md) | [`examples/http-cache/index.ts`](https://github.com/fengsoft/cache-core/blob/main/examples/http-cache/index.ts)
+> Sources: [`examples/http-cache/README.md`](https://github.com/saazip/cache-core/blob/main/examples/http-cache/README.md) | [`examples/http-cache/index.ts`](https://github.com/saazip/cache-core/blob/main/examples/http-cache/index.ts)
 
 ## Purpose
 

@@ -35,7 +35,7 @@ CacheCore is a reusable caching layer for SaaS backends, with explicit namespaci
 
 ```text
 your backend or service
-  -> @fengsoft/cache-core
+  -> @saazip/cache-core
      -> contracts + core + metrics
      -> adapters-redis for shared storage
   -> cache-core admin api
@@ -61,4 +61,4 @@ your backend or service
 - best for backend teams who want explicit caching policy and metrics
 - still opinionated toward backend caching, not generic storage abstraction
 
-> Source repository: [fengsoft/cache-core](https://github.com/fengsoft/cache-core)
+> Source repository: [saazip/cache-core](https://github.com/saazip/cache-core)

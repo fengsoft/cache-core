@@ -57,7 +57,7 @@ const packageDocs = {
 	},
 	sdk: {
 		description:
-			"The public package published as `@fengsoft/cache-core` for embedded library-first adoption.",
+			"The public package published as `@saazip/cache-core` for embedded library-first adoption.",
 		provides: [
 			"the main embedded cache API",
 			"remember/get/getWithMetadata primitives with stale-while-revalidate support",
@@ -77,7 +77,7 @@ const packageDocs = {
 			title: "Smallest useful setup",
 			language: "ts",
 			code: [
-				'import { createCacheCore } from "@fengsoft/cache-core";',
+				'import { createCacheCore } from "@saazip/cache-core";',
 				"",
 				"const cache = createCacheCore({",
 				"  namespace: { service: 'billing-api', domain: 'plans' },",
@@ -118,7 +118,7 @@ const packageDocs = {
 
 const runtimeDocs = {
 	"admin-api": {
-		title: "@fengsoft/cache-core-admin-api",
+		title: "@saazip/cache-core-admin-api",
 		description:
 			"Operational sidecar API for invalidation, warm requests, metrics, and cache admin workflows.",
 		bestFor: [
@@ -171,15 +171,15 @@ const exampleDocs = {
 		],
 		sourceHints: ["README.md", "index.ts"],
 	},
-	"fengsoft-suite-e2e": {
-		title: "Fengsoft suite e2e example",
+	"saazip-suite-e2e": {
+		title: "Saazip suite e2e example",
 		description:
 			"End-to-end example showing CacheCore composing with QueueFlow, EventFlow, and WebhookCore.",
 		bestFor: [
-			"teams who want to see CacheCore used as a read-side accelerator inside the wider Fengsoft stack",
+			"teams who want to see CacheCore used as a read-side accelerator inside the wider Saazip stack",
 		],
 		demonstrates: [
-			"composing cached read models with the rest of the Fengsoft runtime suite",
+			"composing cached read models with the rest of the Saazip runtime suite",
 			"background refresh and admin API warming in a multi-service flow",
 		],
 		runCommand: "pnpm example:suite-e2e",
@@ -198,8 +198,8 @@ export default {
 	title: "CacheCore",
 	description:
 		"Reusable caching layer for SaaS backends with namespacing, tenant-aware keys, TTLs, tags, metrics, and an optional admin API.",
-	defaultRepository: "fengsoft/cache-core",
-	packagePrefix: "@fengsoft/cache-core",
+	defaultRepository: "saazip/cache-core",
+	packagePrefix: "@saazip/cache-core",
 	sidebar: {
 		guides: [
 			{ label: "Quick start", slug: "guides/getting-started" },
@@ -236,7 +236,7 @@ export default {
 		],
 		howPiecesFit: [
 			"your backend or service",
-			"  -> @fengsoft/cache-core",
+			"  -> @saazip/cache-core",
 			"     -> contracts + core + metrics",
 			"     -> adapters-redis for shared storage",
 			"  -> cache-core admin api",
@@ -265,7 +265,7 @@ export default {
 	runtimesIndexIntro:
 		"The admin API is optional. The default adoption path is still embedded library usage.",
 	examplesIndexIntro:
-		"The example folders show both the library-first path and the broader Fengsoft suite composition story.",
+		"The example folders show both the library-first path and the broader Saazip suite composition story.",
 	packages: packageDocs,
 	runtimes: runtimeDocs,
 	examples: exampleDocs,

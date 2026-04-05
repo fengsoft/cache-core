@@ -23,11 +23,11 @@ permission.
 
 ## Enforcement
 
-Report abusive or unacceptable behavior to `opensource@fengsoft.dev`. All
+Report abusive or unacceptable behavior to `opensource@saazip.dev`. All
 reports will be reviewed promptly and handled with care for the reporter's
 privacy and safety.
 
 ## Scope
 
 This Code of Conduct applies within project spaces and in public spaces when an
-individual is representing CacheCore or Fengsoft.
+individual is representing CacheCore or Saazip.

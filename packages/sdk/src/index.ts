@@ -1,7 +1,7 @@
 import type {
 	InvalidateRequest,
 	WarmRequest,
-} from "@fengsoft/cache-core-contracts";
+} from "@saazip/cache-core-contracts";
 import {
 	buildCacheKey,
 	type CacheEntryState,
@@ -17,12 +17,12 @@ import {
 	createJsonSerializer,
 	normalizeTags,
 	resolveCacheEntryState,
-} from "@fengsoft/cache-core-domain";
-import { createCacheMetricsRecorder } from "@fengsoft/cache-core-metrics";
+} from "@saazip/cache-core-domain";
+import { createCacheMetricsRecorder } from "@saazip/cache-core-metrics";
 
-export * from "@fengsoft/cache-core-contracts";
-export * from "@fengsoft/cache-core-domain";
-export * from "@fengsoft/cache-core-metrics";
+export * from "@saazip/cache-core-contracts";
+export * from "@saazip/cache-core-domain";
+export * from "@saazip/cache-core-metrics";
 
 type KeyLike = string | string[];
 

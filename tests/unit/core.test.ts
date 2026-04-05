@@ -1,4 +1,4 @@
-import { createCacheCore } from "@fengsoft/cache-core";
+import { createCacheCore } from "@saazip/cache-core";
 import {
 	buildCacheKey,
 	canServeStaleEntry,
@@ -7,7 +7,7 @@ import {
 	normalizeTags,
 	resolveCacheEntryState,
 	shouldRefreshEntry,
-} from "@fengsoft/cache-core-domain";
+} from "@saazip/cache-core-domain";
 import { describe, expect, test } from "vitest";
 
 describe("cache-core", () => {

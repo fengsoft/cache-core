@@ -1,4 +1,4 @@
-import type { CacheMetricSnapshot } from "@fengsoft/cache-core-domain";
+import type { CacheMetricSnapshot } from "@saazip/cache-core-domain";
 
 export const cacheMetricNames = {
 	hitTotal: "cache_core_hit_total",

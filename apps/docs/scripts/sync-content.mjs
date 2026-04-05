@@ -119,10 +119,10 @@ async function collectWorkspaces(baseDir, decorate) {
 
 		const packageJson = await readJson(packageJsonPath);
 		const internalDependencies = Object.keys(packageJson.dependencies ?? {})
-			.filter((dependency) => dependency.startsWith("@fengsoft/"))
+			.filter((dependency) => dependency.startsWith("@saazip/"))
 			.sort();
 		const externalDependencies = Object.keys(packageJson.dependencies ?? {})
-			.filter((dependency) => !dependency.startsWith("@fengsoft/"))
+			.filter((dependency) => !dependency.startsWith("@saazip/"))
 			.sort();
 		workspaces.push({
 			slug: decoration.slug,
@@ -507,7 +507,7 @@ async function writeWorkspaceDoc({
 	const related = (record.docs?.related ?? [])
 		.map(
 			(slug) =>
-				`- [\`${slug.startsWith("@fengsoft/") ? slug : slug === "sdk" ? siteConfig.packagePrefix : `${siteConfig.packagePrefix}-${slug}`}\`](${relativeDocLink(docRoute, `/packages/${slug}/`)})`,
+				`- [\`${slug.startsWith("@saazip/") ? slug : slug === "sdk" ? siteConfig.packagePrefix : `${siteConfig.packagePrefix}-${slug}`}\`](${relativeDocLink(docRoute, `/packages/${slug}/`)})`,
 		)
 		.join("\n");
 	const youStillOwn = (record.docs?.youStillOwn ?? [])
@@ -527,7 +527,7 @@ async function writeWorkspaceDoc({
 							dependency.replace(siteConfig.packagePrefix, "") || "sdk";
 						const normalizedSlug = slug.startsWith("-")
 							? slug.slice(1)
-							: slug.replace("@fengsoft/", "");
+							: slug.replace("@saazip/", "");
 						return `- [\`${dependency}\`](${relativeDocLink(docRoute, `/packages/${normalizedSlug}/`)})`;
 					})
 					.join("\n")

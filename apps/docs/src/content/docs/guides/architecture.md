@@ -9,7 +9,7 @@ CacheCore is intentionally library-first. The main architecture choice is to kee
 
 ```text
 your backend or service
-  -> @fengsoft/cache-core
+  -> @saazip/cache-core
      -> contracts + core + metrics
      -> adapters-redis for shared storage
   -> cache-core admin api

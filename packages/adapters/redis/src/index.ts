@@ -1,4 +1,4 @@
-import type { CacheStore, CacheTagStore } from "@fengsoft/cache-core-domain";
+import type { CacheStore, CacheTagStore } from "@saazip/cache-core-domain";
 import type Redis from "ioredis";
 
 function tagKey(tag: string) {

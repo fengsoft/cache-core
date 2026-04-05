@@ -1,11 +1,11 @@
 ---
-title: "@fengsoft/cache-core-contracts"
+title: "@saazip/cache-core-contracts"
 description: "Public HTTP and cache-surface contracts for invalidation, warming, metrics, and admin API responses."
 sidebar:
   order: 2
 ---
 
-> Sources: [`packages/contracts/package.json`](https://github.com/fengsoft/cache-core/blob/main/packages/contracts/package.json) | [`packages/contracts/src/index.ts`](https://github.com/fengsoft/cache-core/blob/main/packages/contracts/src/index.ts)
+> Sources: [`packages/contracts/package.json`](https://github.com/saazip/cache-core/blob/main/packages/contracts/package.json) | [`packages/contracts/src/index.ts`](https://github.com/saazip/cache-core/blob/main/packages/contracts/src/index.ts)
 
 ## Purpose
 
@@ -23,7 +23,7 @@ Public HTTP and cache-surface contracts for invalidation, warming, metrics, and 
 
 ## Workspace details
 
-- Package name: `@fengsoft/cache-core-contracts`
+- Package name: `@saazip/cache-core-contracts`
 - Workspace path: `packages/contracts`
 
 ## Internal dependencies
@@ -36,9 +36,9 @@ Public HTTP and cache-surface contracts for invalidation, warming, metrics, and 
 
 ## Usually paired with
 
-- [`@fengsoft/cache-core`](../sdk/)
-- [`@fengsoft/cache-core-core`](../core/)
-- [`@fengsoft/cache-core-metrics`](../metrics/)
+- [`@saazip/cache-core`](../sdk/)
+- [`@saazip/cache-core-core`](../core/)
+- [`@saazip/cache-core-metrics`](../metrics/)
 
 ## Scripts
 

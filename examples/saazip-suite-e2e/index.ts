@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { fileURLToPath } from "node:url";
-import { createCacheCore } from "@fengsoft/cache-core";
+import { createCacheCore } from "@saazip/cache-core";
 
 interface RequestOptions {
 	method?: string;
@@ -118,7 +118,7 @@ function startWebhookReceiver(bindHost: string) {
 	});
 }
 
-export async function runFengsoftSuiteE2E() {
+export async function runSaazipSuiteE2E() {
 	const queueflowBaseUrl =
 		process.env.QUEUEFLOW_BASE_URL ?? "http://127.0.0.1:3001";
 	const eventflowBaseUrl =
@@ -138,7 +138,7 @@ export async function runFengsoftSuiteE2E() {
 	try {
 		const cache = createCacheCore({
 			namespace: {
-				service: "fengsoft-suite",
+				service: "saazip-suite",
 				domain: "dashboard",
 			},
 			tenantId,
@@ -164,7 +164,7 @@ export async function runFengsoftSuiteE2E() {
 			method: "POST",
 			body: {
 				tenantId,
-				url: `http://${webhookReceiverHost}:${receiver.port}/webhooks/fengsoft-suite`,
+				url: `http://${webhookReceiverHost}:${receiver.port}/webhooks/saazip-suite`,
 				eventTypes: [eventType],
 			},
 		});
@@ -303,7 +303,7 @@ export async function runFengsoftSuiteE2E() {
 		await requestJson(cacheCoreBaseUrl, "/v1/warm", {
 			method: "POST",
 			body: {
-				namespace: "fengsoft-suite:dashboard",
+				namespace: "saazip-suite:dashboard",
 				tenantId,
 				keys: ["suite:overview"],
 			},
@@ -373,8 +373,8 @@ export async function runFengsoftSuiteE2E() {
 const isMainModule = process.argv[1] === fileURLToPath(import.meta.url);
 
 if (isMainModule) {
-	runFengsoftSuiteE2E().catch((error) => {
-		console.error("Fengsoft suite e2e example failed.");
+	runSaazipSuiteE2E().catch((error) => {
+		console.error("Saazip suite e2e example failed.");
 		console.error(error);
 		process.exitCode = 1;
 	});

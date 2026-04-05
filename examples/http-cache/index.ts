@@ -1,4 +1,4 @@
-import { createCacheCore } from "@fengsoft/cache-core";
+import { createCacheCore } from "@saazip/cache-core";
 
 const tenantId = process.env.CACHECORE_TENANT_ID ?? "tenant_demo";
 

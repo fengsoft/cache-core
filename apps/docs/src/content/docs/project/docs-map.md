@@ -6,7 +6,7 @@ sidebar:
   order: 2
 ---
 
-> Source: [`docs/README.md`](https://github.com/fengsoft/cache-core/blob/main/docs/README.md)
+> Source: [`docs/README.md`](https://github.com/saazip/cache-core/blob/main/docs/README.md)
 
 CacheCore docs are organized by purpose:
 
@@ -21,6 +21,6 @@ Start with:
 
 - [`concepts/README.md`](./concepts/README.md)
 - [`architecture/README.md`](./architecture/README.md)
-- [`guides/compose-with-fengsoft-suite.md`](./guides/compose-with-fengsoft-suite.md)
+- [`guides/compose-with-saazip-suite.md`](./guides/compose-with-saazip-suite.md)
 - [`operations/release-checklist.md`](./operations/release-checklist.md)
 - [`reference/openapi.yaml`](./reference/openapi.yaml)

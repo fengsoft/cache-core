@@ -6,7 +6,7 @@ sidebar:
   order: 3
 ---
 
-> Source: [`LICENSE`](https://github.com/fengsoft/cache-core/blob/main/LICENSE)
+> Source: [`LICENSE`](https://github.com/saazip/cache-core/blob/main/LICENSE)
 
 ```text
 Apache License
